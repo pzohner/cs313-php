@@ -6,11 +6,12 @@
 	<title>Week02 Team Assignment</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="week02.js"></script>
+	<script src="intro/scripts.js"></script>
 
 	<!-- Including bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
+	<link href="intro/styles.css" rel="stylesheet" type="text/css">
 
 	<style>
 		.ifOnlyIKnew {
