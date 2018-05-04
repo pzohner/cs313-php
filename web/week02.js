@@ -17,6 +17,3 @@ function changecolor() {
 }
 
 
-$("#changevisibility").click(function(){ 
-	$("#changevis").css("visibility", "hidden");
-});
