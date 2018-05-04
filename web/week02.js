@@ -1,0 +1,3 @@
+def clicked() {
+	alert("Clicked!");
+}
