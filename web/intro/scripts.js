@@ -25,7 +25,7 @@ $(document).ready(function() {
   		// $("#changevis").css("visibility", "hidden").hide().fadeIn();
 
   		// fadeOut sets display to "none" which is why I check for it above.
-  		$("#changevis").fadeOut("slow");
+  		$("#changevis").fadeOut();
   	}
 
   });
