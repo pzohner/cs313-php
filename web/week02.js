@@ -18,5 +18,5 @@ function changecolor() {
 
 
 $("#changevisibility").click(function(){ 
-	$("#changevis").css("visibility", "None");
-	});
+	$("#changevis").css("visibility", "hidden");
+});
