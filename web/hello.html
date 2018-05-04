@@ -44,11 +44,12 @@
 </body>
 <script>
 $("#changevisibility").click(function(){ 
-	if ($("#changevis").css("visibility") == "hidden") {
+
+	if ($("#changevis").css("display") == "none") {
 		// alert("element is hidden: Showing now...")
 		$("#changevis").fadeIn();
 		// $("#changevis").css("visibility", "visible").hide().fadeIn("slow");;
-	} else if ($("#changevis").css("visibility") == "visible"){
+	} else if ($("#changevis").css("display") == "visible"){
 		// alert("element is visible: Hiding now...")
 		// $("#changevis").css("visibility", "hidden").hide().fadeIn();
 		$("#changevis").fadeOut();
