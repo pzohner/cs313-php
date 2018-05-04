@@ -16,3 +16,7 @@ function changecolor() {
 	// alert("color has been changed!");
 }
 
+
+$("#changevisibility").click(function(){ 
+	$("#changevis").css("visibility", "None");
+	});
