@@ -49,7 +49,7 @@ $("#changevisibility").click(function(){
 		$("#changevis").css("visibility", "visible").hide().fadeIn("slow");;
 	} else if ($("#changevis").css("visibility") == "visible"){
 		alert("element is visible: Hiding now...")
-		$("#changevis").css("visibility", "hidden").hide().fadeOut("slow");
+		$("#changevis").hide().fadeOut("slow").css("visibility", "hidden");
 	}
 	
 });
