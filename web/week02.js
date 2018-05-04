@@ -1,3 +1,3 @@
-def clicked() {
+function clicked() {
 	alert("Clicked!");
 }
