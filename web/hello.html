@@ -44,10 +44,14 @@
 </body>
 <script>
 $("#changevisibility").click(function(){ 
-	$("#changevis").css("visibility", "hidden");
-	$("#changevisibility").click(function(){ 
+	if ($("#changevis").css("visibility") == "hidden") {
+		alert("element is hidden: Showing now...")
 		$("#changevis").css("visibility", "visible");
-});
+	} else if ($("#changevis").css("visibility") == "visible"){
+		alert("element is visible: Hiding now...")
+		$("#changevis").css("visibility", "hidden");
+	}
+	
 });
 </script>
 </html>
