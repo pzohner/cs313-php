@@ -5,7 +5,7 @@ function clicked() {
 function changecolor() {
 	var inputfield = document.getElementById("input").value;
 	alert(inputfield);
-	document.getElementById("unique").backgroundColor = inputfield;
+	document.getElementById("unique").style.backgroundColor = inputfield;
 	alert("color has been changed!");
 }
 
