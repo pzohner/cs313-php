@@ -45,11 +45,11 @@
 <script>
 $("#changevisibility").click(function(){ 
 	if ($("#changevis").css("visibility") == "hidden") {
-		alert("element is hidden: Showing now...")
+		// alert("element is hidden: Showing now...")
 		$("#changevis").css("visibility", "visible").hide().fadeIn("slow");;
 	} else if ($("#changevis").css("visibility") == "visible"){
-		alert("element is visible: Hiding now...")
-		$("#changevis").hide().fadeOut("slow").css("visibility", "hidden");
+		// alert("element is visible: Hiding now...")
+		$("#changevis").css("visibility", "hidden").hide().fadeIn("slow");
 	}
 	
 });
