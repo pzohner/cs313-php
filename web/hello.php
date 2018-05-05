@@ -27,6 +27,11 @@
 		<div class="centered pop"> My Name is Porter Zohner... </div>
 
 		<div class="bottom-right pop"> ...and I LOVE Virtual Reality! </div>
+		<?php
+			echo "<span>Today is " . date("Y/m/d") ."</span>". "<br>";
+		
+			// phpinfo();
+		?>
 	</div>
 
 
@@ -41,11 +46,7 @@
 		<div class="top-right"> She's beautiful isn't she? :D </div>
 	</div>
 
-		<?php
-			echo "Today is " . date("Y/m/d") . "<br>";
 		
-			// phpinfo();
-		?>
 	
 
 	<!-- <div id="unique" class="ifOnlyIKnew">
