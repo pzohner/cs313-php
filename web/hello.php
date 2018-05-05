@@ -43,7 +43,7 @@
 
 	<!-- <div>
 		<?php
-			echo $_SERVER;
+			echo "Today is " . date("Y/m/d") . "<br>";
 		
 			// phpinfo();
 		?>
