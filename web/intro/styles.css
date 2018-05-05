@@ -6,3 +6,8 @@
   .ifOnlyIKnew:hover {
     font-weight: bold;
   }
+
+  img {
+    width: 500px;
+    height: auto;
+  }
