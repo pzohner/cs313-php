@@ -41,13 +41,11 @@
 		<div class="top-right"> She's beautiful isn't she? :D </div>
 	</div>
 
-	<!-- <div>
 		<?php
 			echo "Today is " . date("Y/m/d") . "<br>";
 		
 			// phpinfo();
 		?>
-	</div> -->
 	
 
 	<!-- <div id="unique" class="ifOnlyIKnew">
