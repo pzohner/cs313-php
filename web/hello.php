@@ -29,7 +29,7 @@
 		<div class="bottom-right pop"> ...and I LOVE Virtual Reality! </div>
 		<?php
 			echo "<span style=\"color:black\"> Today is " . date("Y/m/d") ."</span>". "<br>";
-			echo print_r($_SERVER);
+			// echo print_r($_SERVER);
 			// phpinfo();
 		?>
 	</div>
