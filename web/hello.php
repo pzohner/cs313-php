@@ -43,9 +43,7 @@
 
 	<!-- <div>
 		<?php
-		foreach (getallheaders() as $name => $value) {
-			echo "$name: $value\n";
-		}
+			print_r($_SERVER)
 		
 		//	phpinfo();
 		?>
