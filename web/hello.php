@@ -28,7 +28,7 @@
 
 		<div class="bottom-right pop"> ...and I LOVE Virtual Reality! </div>
 		<?php
-			echo "<span>Today is " . date("Y/m/d") ."</span>". "<br>";
+			echo "<span style='color:black'>Today is " . date("Y/m/d") ."</span>". "<br>";
 		
 			// phpinfo();
 		?>
