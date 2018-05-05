@@ -19,6 +19,9 @@
 
 	</head>
 <body>
+
+	<img src="intro/images/oculus-touch.jpg" alt="Man with oculus rift virtual
+	reality headset on his head, holding oculus touch motion controllers in each hand.">
 	<div id="unique" class="ifOnlyIKnew">
 		<span> Some example text 1 </span>
 	</div>

@@ -1,34 +1,27 @@
 function clicked() {
-	alert("Clicked!");
+  alert("Clicked!");
 }
 
 
 function changecolor() {
-	var inputfield = document.getElementById("input").value;
-	alert(inputfield);
-	$("#unique").css('background-color', inputfield);
+  var inputfield = document.getElementById("input").value;
+  alert(inputfield);
+  $("#unique").css('background-color', inputfield);
 
-	// This is if you wanted to do the above in javascript
-	// document.getElementById("unique").style.backgroundColor = inputfield;
-	// alert("color has been changed!");
+  // This is if you wanted to do the above in javascript
+  // document.getElementById("unique").style.backgroundColor = inputfield;
+  // alert("color has been changed!");
 }
 
+// The document.ready function allows jquery to wait to do things until the
+// document is loaded. IN this case, it waits till the document is loaded
+// to assign its click handler. 
 $(document).ready(function() {
-  $("#changevisibility").click(function(){
-
-  	if ($("#changevis").css("display") == "none") {
-  		// alert("element is hidden: Showing now...")
-  		$("#changevis").fadeIn();
-  		// $("#changevis").css("visibility", "visible").hide().fadeIn("slow");;
-  	} else {
-  		// alert("element is visible: Hiding now...")
-  		// $("#changevis").css("visibility", "hidden").hide().fadeIn();
-
-  		// fadeOut sets display to "none" which is why I check for it above.
-  		$("#changevis").fadeOut();
-  	}
-
+  $("#changevisibility").click(function() {
+    if ($("#changevis").css("display") == "none") {
+      $("#changevis").fadeIn();
+    } else {
+      $("#changevis").fadeOut();
+    }
   });
-
-
 });
