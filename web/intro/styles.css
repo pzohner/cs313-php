@@ -11,3 +11,86 @@
     width: 100%;
     height: auto;
   }
+
+  #weddingimg {
+    width: 500px;
+    height: auto;
+    transition: 10s;
+    -webkit-filter: blur(15px); /* Safari 6.0 - 9.0 */
+    filter: blur(15px);
+    
+  }
+
+  #weddingimg:hover {
+    -webkit-filter: blur(0px); /* Safari 6.0 - 9.0 */
+    filter: blur(0px);
+    transition: .75s;
+    
+  }
+
+  .flow-text {
+    margin-top: 100px;
+    text-align: center;
+    height: 150px;
+    font-size: 30px;
+  }
+  #subscript {
+    font-size: 10px;
+
+  }
+
+.pop {  
+  text-shadow: 1px 1px 15px #000;
+  font-size: 30px;
+  transition: 2s;
+}
+
+.pop:hover {  
+  text-shadow: 10px -10px 25px #80f442,
+               10px 10px 25px green,
+               -10px 10px 25px blue,
+               -10px -10px 25px purple;
+  transition: .75s;
+}
+
+  /********************** 
+  I did not write these! 
+  ***********************/
+  .container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+.bottom-right {
+  width: 200px;
+    position: absolute;
+    bottom: 150px;
+    right: 250px;
+}
+
+.centered {
+    position: absolute;
+    width: 250px;
+    top: 25%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+}
