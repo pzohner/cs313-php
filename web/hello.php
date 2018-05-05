@@ -41,11 +41,11 @@
 		<div class="top-right"> She's beautiful isn't she? :D </div>
 	</div>
 
-	<div>
+	<!-- <div>
 		<?php
-			phpinfo();
+		//	phpinfo();
 		?>
-	</div>
+	</div> -->
 	
 
 	<!-- <div id="unique" class="ifOnlyIKnew">
