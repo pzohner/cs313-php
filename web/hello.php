@@ -24,7 +24,7 @@
 	<div class="container">
 		<img src="intro/images/oculus-touch.jpg" alt="Man with oculus rift virtual
 		reality headset on his head, holding oculus touch motion controllers in each hand.">
-		<div class="centered pop"> My Name is Porter Zohner... </div>
+		<div class="centered pop">  My Name is Porter Zohner... </div>
 
 		<div class="bottom-right pop"> ...and I LOVE Virtual Reality! </div>
 		<?php
