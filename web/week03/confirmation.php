@@ -33,7 +33,7 @@ function deleteItems() {
 <?php
 session_start();
 
-echo "<h3> Congratulation! You have bought the following items... </h3>";
+echo "<h3> Congratulations! You have bought the following items... </h3>";
 // <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
 
 
@@ -48,13 +48,11 @@ function showcart() {
         } elseif ($key == "sensor") {
             $key = "Floor sensor";
         }
-        echo "$key for $$value.00<br>";
+        echo "<span> $key for $$value.00</span><br>";
         // unset($_SESSION['Products']);
     }
     echo "<\div>";
 }
-
-
 
 showcart();
 ?>
