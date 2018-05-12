@@ -17,7 +17,7 @@
 <script>
 
   function addToCart(itemName, price) {
-    alert("Added to cart: " + itemName + ", " + price);
+    // alert("Added to cart: " + itemName + ", " + price);
     $("#" + itemName).text("Added to Cart!");
     $("#" + itemName).css("background-color", "green");
 
@@ -30,7 +30,7 @@
                 price: price,
             }
     }).done(function(data){
-            alert(data);
+            // alert(data);
     });
   }
 
@@ -54,7 +54,7 @@ function viewCart() {
 
  <div class="item">
    <div class="namePic"> 
-     <span > VR Headset </span>
+     <span > VR Head Mounted Display (HMD) </span>
      <img src="../intro/images/oculus-touch.jpg" alt="picture of man wearing an oculus touch VR headset">
    </div>
 
@@ -62,7 +62,7 @@ function viewCart() {
 
    <span> 0 </span>
 
-   <button id="hmd" class="addToCart" type="button" onclick="addToCart('hmd', '399')" >Add to Cart</button>
+   <button id="hmd" class="addToCart" type="button" onclick="addToCart('VR HMD', '399')" >Add to Cart</button>
  </div>
 
   <div class="item">
@@ -75,7 +75,7 @@ function viewCart() {
 
    <span> 0 </span>
 
-   <button id="sensor" class="addToCart" type="button" onclick="addToCart('sensor', '60')" >Add to Cart</button>
+   <button id="sensor" class="addToCart" type="button" onclick="addToCart('Floor Sensor', '60')" >Add to Cart</button>
  </div>
 
   <div class="item">
@@ -88,7 +88,7 @@ function viewCart() {
 
    <span> 0 </span>
 
-   <button id="touchcontrollers" class="addToCart" type="button" onclick="addToCart('touchcontrollers', '120')" >Add to Cart</button>
+   <button id="touchcontrollers" class="addToCart" type="button" onclick="addToCart('Touch Controllers', '120')" >Add to Cart</button>
  </div>
 
 

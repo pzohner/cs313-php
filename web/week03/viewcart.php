@@ -26,7 +26,7 @@ echo "<h1> This is your cart </h1>";
 session_start();
 echo "<ol>";
 foreach($_SESSION as $key => $value){
-    echo "<li>$key for $value</li>";
+    echo "<li>$key for $$value.00</li>";
 
 }
 echo "</ol>";
