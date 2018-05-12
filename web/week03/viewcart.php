@@ -65,7 +65,7 @@ function showcart() {
         } elseif ($key == "sensor") {
             $key = "Floor sensor";
         }
-        echo "<input type='checkbox' name='cartitem' value='$originalkey'> $key for $$value.00<br>";
+        echo "<div><input type='checkbox' name='cartitem' value='$originalkey'> $key for $$value.00</div>";
     }
     echo "</div>";
     
