@@ -18,7 +18,11 @@
 
 $(document).ready(function(){
     $('.addToCart').click(function(){
-      $.ajax({ url: 'browse.php' });
+      $.ajax({ 
+        url: 'browse.php' 
+        success: function(data) {
+                alert("Data returned: " + data);
+            }});
       // $.get('browse.php', function(data) {
       //           alert("Server Returned: " + data);
       //       });
