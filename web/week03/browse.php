@@ -18,7 +18,8 @@
 
   function addToCart(itemName, price) {
     alert("Added to cart: " + itemName + ", " + price);
-    $("#" + itemName).text("Added to Cart!").css("background-color:green;");
+    $("#" + itemName).text("Added to Cart!");
+    $("#" + itemName).css("background-color:green;");
     
      $.ajax({
             url: 'session.php',
