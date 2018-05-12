@@ -22,9 +22,10 @@
 
 
 <?php
+echo "<h1> This is your cart </h1>";
 session_start();
 foreach($_SESSION as $key => $value){
-    echo "<h1>name is: $key, value is $value</h1>";
+    echo "$key for $value<br>";
 
 }
 ?>
