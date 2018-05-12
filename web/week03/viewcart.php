@@ -15,11 +15,20 @@
   
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script>
+
+function deleteItems() {
+    $('input[type=checkbox]').each(function () {
+        if (this.checked) {
+            alert(this.val());
+        }
+        // sList += "(" + $(this).val() + "-" + (this.checked ? "checked" : "not checked") + ")";
+    });
+}
 </script>
 </head>
 
 <body id="viewcart">
-
+   
 
 <?php
 session_start();
@@ -27,8 +36,8 @@ session_start();
 echo "<h1> Items in your cart... </h1>";
 // <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
 function showcart() {
-    echo "<ol>";
     foreach($_SESSION as $key => $value){
+        $originalkey = $key;
         if ($key == "hmd") {
             $key = "Virtual Reality Head Mounted Display (HMD)";
         } elseif ($key == "touchcontrollers") {
@@ -36,15 +45,14 @@ function showcart() {
         } elseif ($key == "sensor") {
             $key = "Floor sensor";
         }
-        echo "<input type='checkbox' name='cartitem'> $key for $$value.00<br>";
-    
+        echo "<input type='checkbox' name='cartitem' value='$originalkey'> $key for $$value.00<br>";
+        // unset($_SESSION['Products']);
     }
-    echo "</ol>";    
 }
 
 showcart();
 ?>
-
+<button id="deleteSelected" type="button" onClick="deleteItems()"> Delete Items </button>
 <button id="backToBrowse" type="button" onClick="document.location.href='browse.php'"> Back to browse </button>
 <button id="checkout" type="button" onClick="document.location.href='checkout.php'"> Checkout </button>
 
