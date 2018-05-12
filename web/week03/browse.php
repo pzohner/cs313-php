@@ -40,7 +40,7 @@
       
       // echo "alert(\"THe item is: "."$itemName"."\");";
     ?>
-    alert("The data is: " + <?php echo $_SESSION["name"]; ?> );
+    
   }
 
 // $(document).ready(function(){
@@ -114,11 +114,9 @@
 
 </div>
 
-
-<?php
-print_r($_SESSION);
-?>
-
+<script>
+alert("The data is: " + " + <?php echo $_SESSION["name"]; ?> + ");
+</script>
 
 
 </body>
