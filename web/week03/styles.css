@@ -14,6 +14,7 @@
   flex-direction: column;
   word-wrap: normal;
   text-align: center;
+  margin:auto;
 }
 #confirmation {
   display:flex;
