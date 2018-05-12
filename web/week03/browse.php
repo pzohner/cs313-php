@@ -18,8 +18,9 @@
 
   function addToCart(itemName, data) {
     alert("Added to cart: " + itemName + ", " + data);
+    $.post("browse.php", {itemName, data});
     <?php
-      $_SESSION[$itemName] = $data;
+    $_SESSION[$itemName] = $data;
       echo "alert(\"added to session\"+ \": $_SESSION[$itemName] \");"
     ?>
 
