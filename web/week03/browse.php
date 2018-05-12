@@ -20,7 +20,7 @@
     alert("Added to cart: " + itemName + ", " + data);
 
      $.ajax({
-            url: 'browse.php',
+            url: 'session.php',
             type: 'POST',
             async: false,
             data: {
@@ -31,19 +31,19 @@
     // $.post("browse.php", {"itemName": itemName, "data" : data}, success: function () {alert("ajax call completed");
     
     }).done(function(data){
-            // alert(data);
+            alert(data);
          
             
     });
-    <?php
-      session_start();
-      $itemName = $_POST["itemName"];
-      $_SESSION["name"] = $_POST["data"];
-      echo $_SESSION["name"];
+    // ?php
+    //   session_start();
+    //   $itemName = $_POST["itemName"];
+    //   $_SESSION["name"] = $_POST["data"];
+    //   echo $_SESSION["name"];
       
-      // echo "alert(\"THe item is: "."$itemName"."\");";
-    ?>
-     alert("The data is: " + " <?php echo $_SESSION["name"]; ?> ");
+    //   // echo "alert(\"THe item is: "."$itemName"."\");";
+    // ?>
+    //  alert("The data is: " + " <?php echo $_SESSION["name"]; ?> ");
   }
 
 // $(document).ready(function(){
