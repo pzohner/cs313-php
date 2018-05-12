@@ -1,0 +1,23 @@
+
+#listofitems {
+  display:flex;
+  flex-direction: column;
+}
+
+.namePic {
+  display: flex;
+  flex-direction: column;
+}
+
+.namePic img {
+  width: 150px;
+  height: auto;
+}
+
+.item {
+  display: flex;
+  justify-content: space-evenly;
+  border-style: ridge;
+
+}
+
