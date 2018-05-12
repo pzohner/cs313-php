@@ -43,13 +43,15 @@ function viewCart() {
 <body>
 <div id="listofitems">
   <div class="item">
+   <div class="namePic"> 
       <span > Name </span>
-    
+    </div>
+
       <span> Price: </span>
     
       <span> Quantity: </span>
 
-      <span> </span>
+      <span> "      " </span>
     </div>
 
  <div class="item">
