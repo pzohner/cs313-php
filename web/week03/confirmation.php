@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,18 +30,35 @@ function deleteItems() {
 </script>
 </head>
 
-<body id="viewcart">
-   
-<h1> Please fill in the following information so we can bill you appropriately. </h1>
-    <div id="addressInfo"> 
-    Please enter your address: <br> <input type='text' name='address' value=''>
-    State:  <br> <input type='text' name='address' value=''>
-    Country <br> <input type='text' name='address' value=''>
-    Zip code <br> <input type='text' name='address' value=''>
-    </div>
+<?php
+session_start();
 
-<button id="checkout" type="button" onClick="document.location.href='confirmation.php'"> Checkout </button>
+echo "<h3> Congratulation! You have bought the following items... </h3>";
+// <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
 
+
+function showcart() {
+    echo "<div id='confirmation'>";
+    foreach($_SESSION as $key => $value){
+        $originalkey = $key;
+        if ($key == "hmd") {
+            $key = "Virtual Reality Head Mounted Display (HMD)";
+        } elseif ($key == "touchcontrollers") {
+            $key = "Oculus Touch Controllers";
+        } elseif ($key == "sensor") {
+            $key = "Floor sensor";
+        }
+        echo "$key for $$value.00<br>";
+        // unset($_SESSION['Products']);
+    }
+    echo "<\div>";
+}
+
+
+
+showcart();
+?>
 
 </body>
 </html>
+
