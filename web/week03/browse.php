@@ -16,27 +16,39 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script>
 
-$(document).ready(function(){
-    $('.addToCart').click(function(){
-      $.ajax({ 
-        url: 'browse.php', 
-        success: function(data) {
-                alert("Data returned: " + data);
-            }});
-      // $.get('browse.php', function(data) {
-      //           alert("Server Returned: " + data);
-      //       });
-        // var clickBtnValue = $(this).val();
-        // var ajaxurl = 'ajax.php',
-        // data =  {'action': clickBtnValue};
-        // $.post(ajaxurl, data, function (response) {
-        //     // Response div goes here.
-        //     alert("action performed successfully");
-        // });
-    });
+  function addToCart(itemName) {
+    alert("Added to cart: " + itemName)
+    <?php
+      $_SESSION[itemName] = data;
+    ?>
+    alert("added to session" + <?php $_SESSION[itemName]?>)
+  }
 
-});
-// <script src="intro/scripts.js"></script>  
+// $(document).ready(function(){
+
+// $('.addToCart').click(function(itemName, data){
+
+//     });
+
+//     $('.addToCart').click(function(){
+//       $.ajax({ 
+//         url: 'browse.php', 
+//         success: function(data) {
+//                 alert("Data returned: " + data);
+//             }});
+//       // $.get('browse.php', function(data) {
+//       //           alert("Server Returned: " + data);
+//       //       });
+//         // var clickBtnValue = $(this).val();
+//         // var ajaxurl = 'ajax.php',
+//         // data =  {'action': clickBtnValue};
+//         // $.post(ajaxurl, data, function (response) {
+//         //     // Response div goes here.
+//         //     alert("action performed successfully");
+//         // });
+//     });
+
+// });
 </script>
 </head>
 
@@ -62,7 +74,7 @@ $(document).ready(function(){
 
    <span> 0 </span>
 
-   <button class="addToCart" type="button" >Add to Cart</button>
+   <button class="addToCart" type="button" onclick="addToCart(hmd)" >Add to Cart</button>
  </div>
 
 
