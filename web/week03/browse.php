@@ -16,10 +16,10 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script>
 
-  function addToCart(itemName) {
-    alert("Added to cart: " + itemName);
+  function addToCart(itemName, data) {
+    alert("Added to cart: " + itemName + ", " + data);
     <?php
-      $_SESSION[itemName] = "This is some session data";
+      $_SESSION[itemName] = data;
       echo "alert(\"added to session\"+ \": $_SESSION[itemName] \");"
     ?>
 
@@ -67,6 +67,19 @@
     </div>
 
  <div class="item">
+   <div class="namePic"> 
+     <span > VR Headset </span>
+     <img src="../intro/images/oculus-touch.jpg" alt="picture of man wearing an oculus touch VR headset">
+   </div>
+
+   <span value="399"> $399 </span>
+
+   <span> 0 </span>
+
+   <button class="addToCart" type="button" onclick="addToCart('hmd', '399')" >Add to Cart</button>
+ </div>
+
+  <div class="item">
    <div class="namePic"> 
      <span > VR Headset </span>
      <img src="../intro/images/oculus-touch.jpg" alt="picture of man wearing an oculus touch VR headset">
