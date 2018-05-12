@@ -39,7 +39,7 @@
   width: 300px;
   display:flex;
   flex-direction: column;
-  justify-content: right;
+  justify-content: left;
 }
 .item {
   display: flex;
