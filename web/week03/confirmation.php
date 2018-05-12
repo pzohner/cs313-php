@@ -22,9 +22,6 @@
 <?php
 session_start();
 
-// <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
-
-
 function showconfirmation() {
     echo "<div id='confirmation'>";
     echo "<h3> Congratulations! You have bought the following items... </h3>";
@@ -38,12 +35,16 @@ function showconfirmation() {
         } elseif ($key == "sensor") {
             $key = "Floor sensor";
         }
+        if ($value == "") {
 
-        echo "<span> $key for $$value.00</span><br>";
+        } else {
+            echo "<span> $key for $$value.00</span><br>";
+
+        }
         // unset($_SESSION['Products']);
     }
-
-echo "<h3> We will ship these items to the following address </h3>";
+echo "<hr>";
+echo "<h3> We will ship these items to the following address: </h3>";
 $street  =  $_POST["street"];
 $state   =  $_POST["state"];
 $country =  $_POST["country"];
@@ -55,8 +56,6 @@ echo "</div>";
 echo "</div>";
 
 }
-
-
 
 showconfirmation();
 ?>

@@ -19,11 +19,28 @@
 function deleteItems() {
     $('input[type=checkbox]').each(function () {
         if (this.checked) {
+            itemName = $(this).val();
+            price = "";
             this.nextSibling.textContent = "";
             $(this).remove();
-            // alert("Item " + $(this).val() + "has been checked: " + this.checked);
+
+
+            $.ajax({
+            url: 'session.php',
+            type: 'POST',
+            // async: false,
+            data: {
+              itemName: itemName,
+              price : price
+            }
+            }).done(function(data){
+                    // alert(data);
+            });
+
+            <?php unset($_SESSION[itemName]); ?>
+
+            
         }
-        // sList += "(" + $(this).val() + "-" + (this.checked ? "checked" : "not checked") + ")";
     });
 }
 </script>
@@ -48,7 +65,6 @@ function showcart() {
             $key = "Floor sensor";
         }
         echo "<input type='checkbox' name='cartitem' value='$originalkey'> $key for $$value.00<br>";
-        // unset($_SESSION['Products']);
     }
 }
 
