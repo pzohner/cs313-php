@@ -30,22 +30,23 @@ function deleteItems() {
 </head>
 
 <body id="viewcart">
-   
+
+<form action="confirmation.php" method="POST"> 
 <h1> Please fill in the following information so we can bill you appropriately. </h1>
     <div id="addressInfo"> 
         <div>
-            Please enter your address:  <input type='text' name='address' value=''> <br>
-            State: <input type='text' name='address' value=''> <br> 
+            Please enter your address:  <input type='text' name='street' value=''> <br>
+            State: <input type='text' name='state' value=''> <br> 
         </div>
         <div>
-            Country<input type='text' name='address' value=''> <br> 
-            Zip code<input type='text' name='address' value=''> <br> 
+            Country<input type='text' name='country' value=''> <br> 
+            Zip code<input type='text' name='zip' value=''> <br> 
         </div>
     
     </div>
 
-<button id="checkout" type="button" onClick="document.location.href='confirmation.php'"> Checkout </button>
-
+<button id="checkout" type="submit" > Checkout </button>
+</form> 
 
 </body>
 </html>

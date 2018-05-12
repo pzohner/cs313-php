@@ -26,7 +26,7 @@ echo "<h3> Congratulations! You have bought the following items... </h3>";
 // <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
 
 
-function showcart() {
+function showconfirmation() {
     echo "<div id='confirmation'>";
     foreach($_SESSION as $key => $value){
         $originalkey = $key;
@@ -38,14 +38,27 @@ function showcart() {
             $key = "Floor sensor";
         }
 
-        echo "<span> htmlspecialchars($key) for $htmlspecialchars($value).00</span><br>";
+        echo "<span> $key for $$value.00</span><br>";
         // unset($_SESSION['Products']);
     }
-    echo "<\div>";
+    echo "</div>";
+
+echo "<h3> We will ship these items to the following address </h3>";
+$street  =  $_POST["street"];
+$state   =  $_POST["state"];
+$country =  $_POST["country"];
+$zip     =  $_POST["zip"];
+
+echo "<div>";
+    echo "<span> $street, $state, $country, $zip </span> <br>";
+echo "</div>";
 }
 
-showcart();
+
+
+showconfirmation();
 ?>
+
 
 </body>
 </html>
