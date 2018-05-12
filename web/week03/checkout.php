@@ -33,16 +33,18 @@ function deleteItems() {
    
 <h1> Ready to checkout? </h1>
     <div id="addressInfo"> 
-    <input type='text' name='address' value=''>Please enter your address: <br>
-    <input type='text' name='address' value=''>State:  <br>
-    <input type='text' name='address' value=''>Country <br>
-    <input type='text' name='address' value=''>Zip code <br>
+    Please enter your address: <br> <input type='text' name='address' value=''>
+    State:  <br> <input type='text' name='address' value=''>
+    Country <br> <input type='text' name='address' value=''>
+    Zip code <br> <input type='text' name='address' value=''>
     </div>
 <?php
 session_start();
 
-echo "<h1> Items in your cart... </h1>";
+echo "<h3> You are about to checkout the following items... </h3>";
 // <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
+
+echo "<div id='confirmation'>";
 function showcart() {
     foreach($_SESSION as $key => $value){
         $originalkey = $key;
@@ -53,17 +55,15 @@ function showcart() {
         } elseif ($key == "sensor") {
             $key = "Floor sensor";
         }
-        echo "<input type='checkbox' name='cartitem' value='$originalkey'> $key for $$value.00<br>";
+        echo "$key for $$value.00<br>";
         // unset($_SESSION['Products']);
     }
 }
+echo "<\div>";
+
 
 showcart();
 ?>
-<button id="deleteSelected" type="button" onClick="deleteItems()"> Delete Items </button>
-<button id="backToBrowse" type="button" onClick="document.location.href='browse.php'"> Back to browse </button>
-<button id="checkout" type="button" onClick="document.location.href='checkout.php'"> Checkout </button>
-
 
 </body>
 </html>

@@ -11,6 +11,14 @@
 
 #addressInfo {
   display: flex;
+  width: 1000px;
+  word-wrap: normal;
+}
+#confirmation {
+  display:flex;
+  flex-direction: column;
+  background-color: green;
+  font-size: 24px;
 }
 
 .namePic img {
