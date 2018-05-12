@@ -32,8 +32,6 @@
     
     }).done(function(data){
             alert(data);
-
-            
     });
     // ?php
     //   session_start();
