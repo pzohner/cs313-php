@@ -24,10 +24,13 @@
 <?php
 echo "<h1> This is your cart </h1>";
 session_start();
+echo "<ol>";
 foreach($_SESSION as $key => $value){
-    echo "$key for $value<br>";
+    echo "<li>$key for $value</li>";
 
 }
+echo "</ol>";
+
 ?>
 
 </body>
