@@ -37,10 +37,9 @@
 }
 #viewcartitems {
   display:flex;
-  
-  width: 300px;
   flex-direction: column;
   justify-content: left;
+  text-align: left;
   margin: auto;
 }
 .item {
