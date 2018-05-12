@@ -20,7 +20,7 @@
     alert("Added to cart: " + itemName);
     <?php
       $_SESSION[itemName] = "This is some session data";
-      echo "alert(\"added to session\"+ \"$_SESSION[itemName] \");"
+      echo "alert(\"added to session\"+ \": $_SESSION[itemName] \");"
     ?>
 
     // alert("added to session" + <?php $_SESSION[itemName]?>);
