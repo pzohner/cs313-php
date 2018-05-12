@@ -18,7 +18,7 @@
 
   function addToCart(itemName, data) {
     alert("Added to cart: " + itemName + ", " + data);
-    $.post("browse.php", {itemName: itemName, data : data});
+    $.post("browse.php", {"itemName": itemName, "data" : data});
     <?php
       $itemName = $_POST["itemName"];
       echo "alert(\"THe item is: "."$itemName"."\");";
