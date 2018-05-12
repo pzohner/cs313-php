@@ -14,7 +14,7 @@
 #addressInfo {
   display: flex;
   flex-direction: column;
-  width: 750px;
+  width: 500px;
   /* word-wrap: normal; */
   /* text-align: center; */
   text-align:right;
@@ -35,7 +35,12 @@
 #viewcart {
   text-align:center;
 }
-
+#viewcartitems {
+  width: 300px;
+  display:flex;
+  flex-direction: column;
+  justify-content: right;
+}
 .item {
   display: flex;
   justify-content: space-evenly;
