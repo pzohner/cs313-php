@@ -18,12 +18,13 @@
 
   function addToCart(itemName, data) {
     alert("Added to cart: " + itemName + ", " + data);
-    $.post("browse.php", {"itemName": itemName, "data" : data});
+    $.post("browse.php", {"itemName": itemName, "data" : data}, complete: function () {
+      alert("ajax call completed");
+     });
     <?php
       $itemName = $_POST["itemName"];
       echo "alert(\"THe item is: "."$itemName"."\");";
-
-  ?>
+    ?>
   }
 
 // $(document).ready(function(){
@@ -79,7 +80,7 @@
    <button class="addToCart" type="button" onclick="addToCart('hmd', '399')" >Add to Cart</button>
  </div>
 
-  <div class="item">
+  <!-- <div class="item">
    <div class="namePic"> 
      <span > VR Headset </span>
      <img src="../intro/images/oculus-touch.jpg" alt="picture of man wearing an oculus touch VR headset">
@@ -90,7 +91,7 @@
    <span> 0 </span>
 
    <button class="addToCart" type="button" onclick="addToCart('hmd')" >Add to Cart</button>
- </div>
+ </div> -->
 
 
 
