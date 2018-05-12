@@ -38,7 +38,7 @@
 #viewcartitems {
   display:flex;
   flex-direction: column;
-  justify-content: left;
+  width: 300px;
   text-align: left;
   margin: auto;
 }
