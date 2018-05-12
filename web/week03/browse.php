@@ -30,12 +30,13 @@
     // $.post("browse.php", {"itemName": itemName, "data" : data}, success: function () {alert("ajax call completed");
     
     }).done(function(data){
-            alert(data);
+            // alert(data);
+            <?php echo "alert(\"THe item is: "."$itemName"."\");";?>
     });
     <?php
       session_start();
       $itemName = $_POST["itemName"];
-      echo "alert(\"THe item is: "."$itemName"."\");";
+      // echo "alert(\"THe item is: "."$itemName"."\");";
     ?>
   }
 
