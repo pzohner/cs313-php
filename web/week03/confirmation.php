@@ -22,12 +22,13 @@
 <?php
 session_start();
 
-echo "<h3> Congratulations! You have bought the following items... </h3>";
 // <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
 
 
 function showconfirmation() {
     echo "<div id='confirmation'>";
+    echo "<h3> Congratulations! You have bought the following items... </h3>";
+    
     foreach($_SESSION as $key => $value){
         $originalkey = $key;
         if ($key == "hmd") {
@@ -41,7 +42,6 @@ function showconfirmation() {
         echo "<span> $key for $$value.00</span><br>";
         // unset($_SESSION['Products']);
     }
-    echo "</div>";
 
 echo "<h3> We will ship these items to the following address </h3>";
 $street  =  $_POST["street"];
@@ -52,6 +52,8 @@ $zip     =  $_POST["zip"];
 echo "<div>";
     echo "<span> $street, $state, $country, $zip </span> <br>";
 echo "</div>";
+echo "</div>";
+
 }
 
 
