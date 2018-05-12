@@ -18,7 +18,7 @@
 
 $(document).ready(function(){
     $('.addToCart').click(function(){
-      alert("Button click worked!")
+      $.get('browse.php');
         // var clickBtnValue = $(this).val();
         // var ajaxurl = 'ajax.php',
         // data =  {'action': clickBtnValue};
