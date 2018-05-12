@@ -22,6 +22,7 @@
 
 
 <?php
+session_start();
 foreach($_SESSION as $key => $value){
     echo "<h1>name is: $key, value is $value</h1>";
 
