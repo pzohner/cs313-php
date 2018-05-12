@@ -32,7 +32,7 @@
     }).done(function(data){
             alert(data);
             <?php print_r($_SESSION); ?>
-            //<?php// echo "alert(\"THe item is: "."$_SESSION["name"]"."\");";?>
+            //// echo "alert(\"THe item is: "."$_SESSION["name"]"."\");";
     });
     <?php
       session_start();
