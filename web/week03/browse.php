@@ -16,8 +16,8 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 <script>
 
-  function addToCart(itemName, data) {
-    alert("Added to cart: " + itemName + ", " + data);
+  function addToCart(itemName, price) {
+    alert("Added to cart: " + itemName + ", " + price);
 
      $.ajax({
             url: 'session.php',
@@ -25,7 +25,7 @@
             async: false,
             data: {
               itemName: itemName,
-                data: data,
+                price: price,
             }
             
     // $.post("browse.php", {"itemName": itemName, "data" : data}, success: function () {alert("ajax call completed");
