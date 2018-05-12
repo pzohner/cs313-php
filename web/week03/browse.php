@@ -34,6 +34,9 @@
     });
   }
 
+function viewCart() {
+  
+}
 </script>
 </head>
 
@@ -92,6 +95,8 @@
 
 
 </div>
+
+<button id="viewCartBtn" type="button" onClick="document.location.href='viewcart.php'"> View Cart </button>
 
 
 
