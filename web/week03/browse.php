@@ -31,7 +31,7 @@
     
     }).done(function(data){
             // alert(data);
-          alert("The data is: " + " <?php echo $_SESSION["name"]; ?> ");
+         
             
     });
     <?php
@@ -42,7 +42,7 @@
       
       // echo "alert(\"THe item is: "."$itemName"."\");";
     ?>
-    
+     alert("The data is: " + " <?php echo $_SESSION["name"]; ?> ");
   }
 
 // $(document).ready(function(){
