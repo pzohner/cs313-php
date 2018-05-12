@@ -55,7 +55,7 @@ session_start();
 echo "<h1> Items in your cart... </h1>";
 // <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
 function showcart() {
-    echo "<div id='viewcart'> ";
+    echo "<div id='viewcartitems'> ";
     foreach($_SESSION as $key => $value){
         $originalkey = $key;
         if ($key == "hmd") {
