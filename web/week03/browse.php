@@ -30,8 +30,9 @@
     // $.post("browse.php", {"itemName": itemName, "data" : data}, success: function () {alert("ajax call completed");
     
     }).done(function(data){
-            // alert(data);
-            <?php echo "alert(\"THe item is: "."$_SESSION[$itemName]"."\");";?>
+            alert(data);
+            <?php print_r($_SESSION); ?>
+            //<?php// echo "alert(\"THe item is: "."$_SESSION["name"]"."\");";?>
     });
     <?php
       session_start();
