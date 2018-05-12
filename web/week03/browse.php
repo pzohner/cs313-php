@@ -31,11 +31,6 @@
     
     }).done(function(data){
             alert(data);
-            <?php 
-            session_start();
-            $name = $_SESSION["name"];
-            echo "alert(\"The item is: "."$name"."\");";
-            ?>
     });
     <?php
       session_start();
