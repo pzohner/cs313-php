@@ -18,7 +18,9 @@
 
 $(document).ready(function(){
     $('.addToCart').click(function(){
-      $.get('browse.php');
+      $.get('browse.php', function(data) {
+                alert("Server Returned: " + data);
+            });
         // var clickBtnValue = $(this).val();
         // var ajaxurl = 'ajax.php',
         // data =  {'action': clickBtnValue};
