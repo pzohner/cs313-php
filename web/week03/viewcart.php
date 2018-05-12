@@ -18,28 +18,36 @@
 </script>
 </head>
 
-<body>
+<body id="viewcart">
 
 
 <?php
 session_start();
 
 echo "<h1> Items in your cart... </h1>";
-echo "<ol>";
-foreach($_SESSION as $key => $value){
-    if ($key == "hmd") {
-        $key = "Virtual Reality Head Mounted Display (HMD)";
-    } elseif ($key == "touchcontrollers") {
-        $key = "Oculus Touch Controllers";
-    } elseif ($key == "sensor") {
-        $key = "Floor sensor";
+// <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
+function showcart() {
+    echo "<ol>";
+    foreach($_SESSION as $key => $value){
+        if ($key == "hmd") {
+            $key = "Virtual Reality Head Mounted Display (HMD)";
+        } elseif ($key == "touchcontrollers") {
+            $key = "Oculus Touch Controllers";
+        } elseif ($key == "sensor") {
+            $key = "Floor sensor";
+        }
+        echo "<input type='checkbox' name='cartitem'> $key for $$value.00<br>";
+    
     }
-    echo "<li>$key for $$value.00</li>";
-
+    echo "</ol>";    
 }
-echo "</ol>";
 
+showcart();
 ?>
+
+<button id="backToBrowse" type="button" onClick="document.location.href='browse.php'"> Back to browse </button>
+<button id="checkout" type="button" onClick="document.location.href='checkout.php'"> Checkout </button>
+
 
 </body>
 </html>

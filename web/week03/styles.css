@@ -13,11 +13,13 @@
   width: 150px;
   height: auto;
 }
+#viewcart {
+  text-align:center;
+}
 
 .item {
   display: flex;
   justify-content: space-evenly;
   border-style: ridge;
-
 }
 
