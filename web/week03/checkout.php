@@ -34,12 +34,12 @@ function deleteItems() {
 <h1> Please fill in the following information so we can bill you appropriately. </h1>
     <div id="addressInfo"> 
         <div>
-            Please enter your address: <br> <input type='text' name='address' value=''>
-            State:  <br> <input type='text' name='address' value=''>
+            Please enter your address:  <input type='text' name='address' value=''> <br>
+            State: <input type='text' name='address' value=''> <br> 
         </div>
         <div>
-            Country <br> <input type='text' name='address' value=''>
-            Zip code <br> <input type='text' name='address' value=''>
+            Country<input type='text' name='address' value=''> <br> 
+            Zip code<input type='text' name='address' value=''> <br> 
         </div>
     
     </div>
