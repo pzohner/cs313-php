@@ -30,7 +30,7 @@
                 price: price,
             }
     }).done(function(data){
-            // alert(data);
+            alert(data);
     });
   }
 
