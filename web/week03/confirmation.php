@@ -51,7 +51,7 @@ $country =  $_POST["country"];
 $zip     =  $_POST["zip"];
 
 echo "<div>";
-    echo "<span> $street, $state, $country, $zip </span> <br>";
+    echo "<span>" . htmlspecialchars($street).", ". htmlspecialchars($state) . ", ". htmlspecialchars($country).", ". htmlspecialchars($zip) ."</span> <br>";
 echo "</div>";
 echo "</div>";
 
