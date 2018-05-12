@@ -20,7 +20,7 @@
     alert("Added to cart: " + itemName + ", " + data);
     $.post("browse.php", {itemName: itemName, data : data});
     <?php
-      $itemName = $_POST["itemName"];
+      $itemName = $_POST[itemName];
       echo "THe item is: "."$itemName";
 
   ?>
