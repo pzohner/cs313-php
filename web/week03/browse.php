@@ -20,14 +20,10 @@
     alert("Added to cart: " + itemName + ", " + data);
     $.post("browse.php", {itemName: itemName, data : data});
     <?php
-      echo "alert(\"itemName is \"" . "\"$_POST[itemName]\");";
-    // $itemName = $_POST[itemName];
-    // echo "alert(\"$itemName\");"
-    // $_SESSION[$itemName] = $_POST["data"];
-    //   echo "alert(\"added to session\"+ \": $_SESSION[$itemName] \");";
-    ?>
+      $itemName = $_POST["itemName"];
+      echo "THe item is: "."$itemName";
 
-    // alert("added to session" + <?php $_SESSION[itemName]?>);
+  ?>
   }
 
 // $(document).ready(function(){
