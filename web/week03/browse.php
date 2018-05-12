@@ -22,6 +22,7 @@
      $.ajax({
             url: 'browse.php',
             type: 'POST',
+            async: false,
             data: {
               itemName: itemName,
                 data: data,
