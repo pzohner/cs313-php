@@ -19,7 +19,7 @@
 function deleteItems() {
     $('input[type=checkbox]').each(function () {
         if (this.checked) {
-            alert(this.val());
+            alert("Item" + this + "has been checked: " + this.checked);
         }
         // sList += "(" + $(this).val() + "-" + (this.checked ? "checked" : "not checked") + ")";
     });
