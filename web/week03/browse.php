@@ -100,18 +100,18 @@
    <button class="addToCart" type="button" onclick="addToCart('hmd', '399')" >Add to Cart</button>
  </div>
 
-  <!-- <div class="item">
+  <div class="item">
    <div class="namePic"> 
-     <span > VR Headset </span>
+     <span > Extra Sensor </span>
      <img src="../intro/images/oculus-touch.jpg" alt="picture of man wearing an oculus touch VR headset">
    </div>
 
-   <span value="399"> $399 </span>
+   <span value="399"> $60 </span>
 
    <span> 0 </span>
 
-   <button class="addToCart" type="button" onclick="addToCart('hmd')" >Add to Cart</button>
- </div> -->
+   <button class="addToCart" type="button" onclick="addToCart('sensor', '60')" >Add to Cart</button>
+ </div>
 
 
 
