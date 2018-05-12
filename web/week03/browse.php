@@ -31,7 +31,10 @@
     
     }).done(function(data){
             alert(data);
-            //// echo "alert(\"THe item is: "."$_SESSION["name"]"."\");";
+            <?php 
+            $name = $_SESSION["name"];
+            echo "alert(\"The item is: "."$name"."\");";
+            ?>
     });
     <?php
       session_start();
