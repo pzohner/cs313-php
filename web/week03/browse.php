@@ -21,7 +21,7 @@
     $.post("browse.php", {itemName: itemName, data : data});
     <?php
     $itemName = $_POST["itemName"];
-    $_SESSION[$itemName] = $_POST["data"]
+    $_SESSION[$itemName] = $_POST["data"];
       echo "alert(\"added to session\"+ \": $_SESSION[$itemName] \");"
     ?>
 
