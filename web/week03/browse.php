@@ -18,9 +18,7 @@
 
   function addToCart(itemName, data) {
     alert("Added to cart: " + itemName + ", " + data);
-    $.post("browse.php", {"itemName": itemName, "data" : data}, complete: function () {
-      alert("ajax call completed");
-     });
+    $.post("browse.php", {"itemName": itemName, "data" : data}, success: function () {alert("ajax call completed");});
     <?php
       $itemName = $_POST["itemName"];
       echo "alert(\"THe item is: "."$itemName"."\");";
