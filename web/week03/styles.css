@@ -36,10 +36,12 @@
   text-align:center;
 }
 #viewcartitems {
-  width: 300px;
   display:flex;
+  
+  width: 300px;
   flex-direction: column;
   justify-content: left;
+  margin: auto;
 }
 .item {
   display: flex;
