@@ -62,7 +62,7 @@ function viewCart() {
 
    <span> 0 </span>
 
-   <button id="hmd" class="addToCart" type="button" onclick="addToCart('VR HMD', '399')" >Add to Cart</button>
+   <button id="hmd" class="addToCart" type="button" onclick="addToCart('hmd', '399')" >Add to Cart</button>
  </div>
 
   <div class="item">
@@ -75,7 +75,7 @@ function viewCart() {
 
    <span> 0 </span>
 
-   <button id="sensor" class="addToCart" type="button" onclick="addToCart('Floor Sensor', '60')" >Add to Cart</button>
+   <button id="sensor" class="addToCart" type="button" onclick="addToCart('sensor', '60')" >Add to Cart</button>
  </div>
 
   <div class="item">
@@ -88,7 +88,7 @@ function viewCart() {
 
    <span> 0 </span>
 
-   <button id="touchcontrollers" class="addToCart" type="button" onclick="addToCart('Touch Controllers', '120')" >Add to Cart</button>
+   <button id="touchcontrollers" class="addToCart" type="button" onclick="addToCart('touchcontrollers', '120')" >Add to Cart</button>
  </div>
 
 
