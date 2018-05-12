@@ -12,8 +12,8 @@
 #addressInfo {
   display: flex;
   flex-direction: column;
-  word-wrap: normal;
-  text-align: center;
+  /* word-wrap: normal; */
+  /* text-align: center; */
   margin:auto;
 }
 #confirmation {
