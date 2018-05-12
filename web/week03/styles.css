@@ -9,6 +9,10 @@
   flex-direction: column;
 }
 
+#addressInfo {
+  display: flex;
+}
+
 .namePic img {
   width: 150px;
   height: auto;
