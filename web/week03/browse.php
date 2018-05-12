@@ -33,7 +33,7 @@
             alert(data);
     });
     <?php
-      $session_start();
+      session_start();
       $itemName = $_POST["itemName"];
       echo "alert(\"THe item is: "."$itemName"."\");";
     ?>
