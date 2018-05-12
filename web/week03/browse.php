@@ -18,57 +18,20 @@
 
   function addToCart(itemName, price) {
     alert("Added to cart: " + itemName + ", " + price);
-
+    $.("#" + itemName).text("Added to Cart!").css("background-color:green;");
+    
      $.ajax({
             url: 'session.php',
             type: 'POST',
-            async: false,
+            // async: false,
             data: {
               itemName: itemName,
                 price: price,
             }
-            
-    // $.post("browse.php", {"itemName": itemName, "data" : data}, success: function () {alert("ajax call completed");
-    
     }).done(function(data){
             alert(data);
     });
-    // ?php
-    //   session_start();
-    //   $itemName = $_POST["itemName"];
-    //   $_SESSION["name"] = $_POST["data"];
-    //   echo $_SESSION["name"];
-      
-    //   // echo "alert(\"THe item is: "."$itemName"."\");";
-    // ?>
-    //  alert("The data is: " + " ?php echo $_SESSION["name"]; ?> ");
   }
-
-// $(document).ready(function(){
-
-// $('.addToCart').click(function(itemName, data){
-
-//     });
-
-//     $('.addToCart').click(function(){
-//       $.ajax({ 
-//         url: 'browse.php', 
-//         success: function(data) {
-//                 alert("Data returned: " + data);
-//             }});
-//       // $.get('browse.php', function(data) {
-//       //           alert("Server Returned: " + data);
-//       //       });
-//         // var clickBtnValue = $(this).val();
-//         // var ajaxurl = 'ajax.php',
-//         // data =  {'action': clickBtnValue};
-//         // $.post(ajaxurl, data, function (response) {
-//         //     // Response div goes here.
-//         //     alert("action performed successfully");
-//         // });
-//     });
-
-// });
 
 </script>
 </head>
@@ -91,11 +54,11 @@
      <img src="../intro/images/oculus-touch.jpg" alt="picture of man wearing an oculus touch VR headset">
    </div>
 
-   <span value="399"> $399 </span>
+   <span> $399 </span>
 
    <span> 0 </span>
 
-   <button class="addToCart" type="button" onclick="addToCart('hmd', '399')" >Add to Cart</button>
+   <button id="hmd" class="addToCart" type="button" onclick="addToCart('hmd', '399')" >Add to Cart</button>
  </div>
 
   <div class="item">
@@ -104,11 +67,24 @@
      <img src="../intro/images/oculus-touch.jpg" alt="picture of man wearing an oculus touch VR headset">
    </div>
 
-   <span value="399"> $60 </span>
+   <span> $60 </span>
 
    <span> 0 </span>
 
-   <button class="addToCart" type="button" onclick="addToCart('sensor', '60')" >Add to Cart</button>
+   <button id="sensor" class="addToCart" type="button" onclick="addToCart('sensor', '60')" >Add to Cart</button>
+ </div>
+
+  <div class="item">
+   <div class="namePic"> 
+     <span > Oculus Touch Controllers </span>
+     <img src="../intro/images/oculus-touch.jpg" alt="picture of man wearing an oculus touch VR headset">
+   </div>
+
+   <span> $120 </span>
+
+   <span> 0 </span>
+
+   <button id="touchcontrollers" class="addToCart" type="button" onclick="addToCart('touchcontrollers', '120')" >Add to Cart</button>
  </div>
 
 
