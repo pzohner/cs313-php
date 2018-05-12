@@ -12,8 +12,9 @@
 #addressInfo {
   display: flex;
   flex-direction: column;
-  width: 1000px;
+  width: 500px;
   word-wrap: normal;
+  text-align: center;
 }
 #confirmation {
   display:flex;

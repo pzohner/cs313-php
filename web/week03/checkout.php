@@ -33,10 +33,15 @@ function deleteItems() {
    
 <h1> Please fill in the following information so we can bill you appropriately. </h1>
     <div id="addressInfo"> 
-    Please enter your address: <br> <input type='text' name='address' value=''>
-    State:  <br> <input type='text' name='address' value=''>
-    Country <br> <input type='text' name='address' value=''>
-    Zip code <br> <input type='text' name='address' value=''>
+        <div>
+            Please enter your address: <br> <input type='text' name='address' value=''>
+            State:  <br> <input type='text' name='address' value=''>
+        </div>
+        <div>
+            Country <br> <input type='text' name='address' value=''>
+            Zip code <br> <input type='text' name='address' value=''>
+        </div>
+    
     </div>
 
 <button id="checkout" type="button" onClick="document.location.href='confirmation.php'"> Checkout </button>
