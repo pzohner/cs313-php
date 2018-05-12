@@ -37,7 +37,7 @@
       session_start();
       $itemName = $_POST["itemName"];
       $_SESSION[$itemName] = $_POST["data"];
-      print_r($_SESSION);
+      
       // echo "alert(\"THe item is: "."$itemName"."\");";
     ?>
   }
@@ -115,7 +115,7 @@
 
 
 <?php
-
+print_r($_SESSION);
 ?>
 
 
