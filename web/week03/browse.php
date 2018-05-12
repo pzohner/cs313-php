@@ -74,7 +74,7 @@
 
    <span> 0 </span>
 
-   <button class="addToCart" type="button" onclick="addToCart(hmd)" >Add to Cart</button>
+   <button class="addToCart" type="button" onclick="addToCart('hmd')" >Add to Cart</button>
  </div>
 
 
