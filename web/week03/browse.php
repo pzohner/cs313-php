@@ -19,7 +19,7 @@
 $(document).ready(function(){
     $('.addToCart').click(function(){
       $.ajax({ 
-        url: 'browse.php' 
+        url: 'browse.php', 
         success: function(data) {
                 alert("Data returned: " + data);
             }});
