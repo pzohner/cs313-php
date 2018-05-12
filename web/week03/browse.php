@@ -21,7 +21,7 @@
     <?php
       $_SESSION[itemName] = data;
     ?>
-    alert("added to session" + <?php $_SESSION[itemName]?>);
+    // alert("added to session" + <?php $_SESSION[itemName]?>);
   }
 
 // $(document).ready(function(){
