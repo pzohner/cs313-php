@@ -22,10 +22,18 @@
 
 
 <?php
-echo "<h1> This is your cart </h1>";
 session_start();
+
+echo "<h1> Items in your cart... </h1>";
 echo "<ol>";
 foreach($_SESSION as $key => $value){
+    if ($key == "hmd") {
+        $key = "Virtual Reality Head Mounted Display (HMD)";
+    } elseif ($key == "touchcontrollers") {
+        $key = "Oculus Touch Controllers";
+    } elseif ($key == "sensor") {
+        $key = "Floor sensor";
+    }
     echo "<li>$key for $$value.00</li>";
 
 }
