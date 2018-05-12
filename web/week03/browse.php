@@ -21,7 +21,7 @@
     $.post("browse.php", {itemName: itemName, data : data});
     <?php
       $itemName = $_POST[itemName];
-      echo "THe item is: "."$itemName";
+      echo "alert(THe item is: "."$itemName".")";
 
   ?>
   }
