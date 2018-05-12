@@ -23,7 +23,7 @@
 
 <?php
 foreach($_SESSION as $key => $value){
-    echo "name is: $key, value is $value";
+    echo "<h1>name is: $key, value is $value</h1>";
 
 }
 ?>
