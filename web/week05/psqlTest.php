@@ -10,12 +10,12 @@
 <h1> psql test </h1>
 <?php
 try {
-    $user = 'root';
+    $user = 'cdsnhommsapxtd';
     $password = '$otpWug2';
 
-    $db = new PDO('pgsql:host=127.0.0.1;dbname=myTestDB', $user, $password);
+    $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com:5432;dbname=de9dr91rnaase1', $user, $password);
     echo 'PLSQL connection successful';
-} catch (PDFEXCEPTION $ex)
+} catch (PDOEXCEPTION $ex)
 {
     echo 'Error!: ' . $ex->getMessage();
     die();
