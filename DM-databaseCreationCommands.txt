@@ -1,0 +1,27 @@
+CREATE TABLE NPC (
+id   int PRIMARY KEY NOT NULL,
+dmID int references dm(id),
+name TEXT,
+imgPath text,
+posx int,
+posy int
+);
+
+CREATE TABLE public."character" (
+    id integer NOT NULL PRIMARY KEY,
+    avatarname text NOT NULL,
+    posx integer,
+    posy integer,
+    imgpath text,
+    username text NOT NULL,
+    passwd text NOT NULL
+);
+
+CREATE TABLE public.dm (
+    id integer NOT NULL PRIMARY KEY,
+    dmname text,
+    gamename text NOT NULL,
+    tableimgpath text,
+    username text NOT NULL,
+    passwd text NOT NULL
+);
