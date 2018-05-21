@@ -13,7 +13,7 @@ try {
     $user = 'cdsnhommsapxtd';
     $password = '$otpWug2';
 
-    $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com:5432;dbname=de9dr91rnaase1', $user, $password);
+    $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
     echo 'PLSQL connection successful';
 } catch (PDOEXCEPTION $ex)
 {
