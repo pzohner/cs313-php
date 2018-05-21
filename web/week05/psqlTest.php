@@ -21,6 +21,11 @@ try {
     die();
 }
 
+foreach ($db->query('SELECT username, password FROM note_user') as $row)
+{
+    echo 'user: ' . $row['username'] . 'password: ' . $row['password']. '<br/>';
+
+}
 ?>
 
 
