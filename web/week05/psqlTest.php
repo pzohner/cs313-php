@@ -10,7 +10,7 @@
 <h1> psql test </h1>
 <?php
 try {
-$dbUrl = getenv('DATABSE_URL');
+$dbUrl = getenv('DATABASE_URL');
 
 $dboptions = parse_url($dbUrl);
 
