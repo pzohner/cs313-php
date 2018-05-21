@@ -7,7 +7,7 @@
 </head>
 
 <body>
-
+<h1> psql test </h1>
 <?php
 try {
     $user = 'root';
