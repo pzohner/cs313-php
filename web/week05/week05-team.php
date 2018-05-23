@@ -27,17 +27,9 @@ $password = $dboptions['pass'];
 
 foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row)
 {
-    echo 'book: ' . $row['book'] . 'chapter: ' . $row['chapter'].'verse: '. $row['verse']. 'content: '. $row['content'] . '<br/>';
+    echo '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b>' . '-' . '"' . $row['content'] . '"' . '<br>';
 }
 ?>
 
-
-
-
-
-  <br><br>
-  
-<input type="submit" value="Submit">
-</form>
 </html>
 </body>
