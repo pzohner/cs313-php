@@ -18,7 +18,7 @@ $user = $dboptions['user'];
 $password = $dboptions['pass'];
 
     $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
-    echo 'PLSQL connection successful';
+    // echo 'PLSQL connection successful';
 } catch (PDOEXCEPTION $ex)
 {
     echo 'Error!: ' . $ex->getMessage();
@@ -27,7 +27,7 @@ $password = $dboptions['pass'];
 
 foreach ($db->query('SELECT book, chapter, verse, content FROM Scriptures') as $row)
 {
-    echo '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b>' . '-' . '"' . $row['content'] . '"' . '<br>';
+    echo '<b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b>' . ' - ' . '"' . $row['content'] . '"' . '<br><br>';
 }
 ?>
 
