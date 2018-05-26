@@ -73,3 +73,15 @@ img {
     width: 500px;
     padding: 25px;
 }
+
+/*********************************************
+* DM PROFILE CREATION PAGE
+*********************************************/
+#dm-profile-creation {
+    display: flex;
+    flex-direction: column;
+    border-style: ridge;
+    margin: auto;
+    width: 500px;
+    padding: 25px;
+}
