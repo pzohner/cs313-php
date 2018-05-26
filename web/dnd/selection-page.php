@@ -64,22 +64,7 @@ function isCharacterSelected() {
 
 
             echo '<div id="playerordm">';
-            # DM SELECTION
-            echo '<div id="dm-selection">';
-            echo '<span> Choose a Dungeon Masters Profile...<br>';
-            
-            foreach ($db->query('SELECT dmname, gamename, tableimgpath FROM dm') as $row)
-            {
-                #Print out all DM profiles from the database
-                echo '<input type="radio" name="player-selection" class="dmradio" onclick="isDMSelected()"> ' . $row['dmname'] . ' with game named ' . $row['gamename'] . ' with game board image at ' . $row['tableimgpath']. '<br/>';
-                
-            }
-            echo ' <button id="dm-creation-btn" type="button" onclick="window.location.href=\'dm-profile-creation.php\'"> Create new DM Profile </button><br>';
-            echo ' <button id="game-creation-btn" type="button" onclick="window.location.href=\'game-creation.php\'"> Create a new Game </button><br>';
-            echo '</div>';
-
-            echo 'OR...';
-
+        
             # PLAYER SELECTION
             echo '<div id="character-selection">';
             echo '<span> Choose a character...<br>';
@@ -92,6 +77,21 @@ function isCharacterSelected() {
             echo '</div>';
             echo '</div>';
 
+            echo 'OR...';
+
+            # DM SELECTION
+            echo '<div id="dm-selection">';
+            echo '<span> Choose a Dungeon Masters Profile...<br>';
+
+            foreach ($db->query('SELECT dmname, gamename, tableimgpath FROM dm') as $row)
+            {
+                #Print out all DM profiles from the database
+                echo '<input type="radio" name="player-selection" class="dmradio" onclick="isDMSelected()"> ' . $row['dmname'] . ' with game named ' . $row['gamename'] . ' with game board image at ' . $row['tableimgpath']. '<br/>';
+                
+            }
+            echo ' <button id="dm-creation-btn" type="button" onclick="window.location.href=\'dm-profile-creation.php\'"> Create new DM Profile </button><br>';
+            echo ' <button id="game-creation-btn" type="button" onclick="window.location.href=\'game-creation.php\'"> Create a new Game </button><br>';
+            echo '</div>';
 
             # GAME SELECTION
             echo '<div id="game-selection">';
