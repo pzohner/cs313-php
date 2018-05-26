@@ -62,21 +62,8 @@ function isCharacterSelected() {
                 die();
             }
 
-            # PLAYER SELECTION
-            echo '<div>';
-            echo '<span> Choose a character...<br>';
-            foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
-            {
-                #print out all characters from the database
-                echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected()"> ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
-            }
-            echo '<button id="character-creation" type="button"> Create a new Character </button><br>';
-            echo '</div>';
-
-            echo '<hr>';
-
             # DM SELECTION
-            echo '<div>';
+            echo '<div id="dm-selection">';
             echo '<span> Choose a Dungeon Masters Profile...<br>';
             
             foreach ($db->query('SELECT dmname, gamename, tableimgpath FROM dm') as $row)
@@ -88,8 +75,21 @@ function isCharacterSelected() {
             echo ' <button id="dm-creation" type="button"> Create new DM Profile </button><br>';
             echo ' <button id="game-creation" type="button"> Create a new Game </button><br>';
             echo '</div>';
-        
+            
 
+            echo '<hr>';
+
+        
+            # PLAYER SELECTION
+            echo '<div id="character-selection">';
+            echo '<span> Choose a character...<br>';
+            foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
+            {
+                #print out all characters from the database
+                echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected()"> ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
+            }
+            echo '<button id="character-creation" type="button"> Create a new Character </button><br>';
+            echo '</div>';
         ?>
         </div>
 

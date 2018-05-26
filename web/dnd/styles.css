@@ -29,10 +29,14 @@
 
 /* Div for selecting Dm profiles */
 #dm-selection {
+    display:flex;
+    flex-direction: column;
     padding: 10px;
 }
 
 /* Div for selecting character profiles */
 #character-selection {
+    display:flex;
+    flex-direction: column;
     padding: 10px;
 }
