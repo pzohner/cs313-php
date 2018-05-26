@@ -88,7 +88,7 @@ function isCharacterSelected() {
                 #print out all characters from the database
                 echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected()"> ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
             }
-            echo '<button id="character-creation" type="button" onclick="window.location.href=\'character-creation.php\'"> Create a new Character </button><br>';
+            echo '<button id="createCharacterButton" type="button" onclick="window.location.href=\'character-creation.php\'"> Create a new Character </button><br>';
             echo '</div>';
             echo '</div>';
 
