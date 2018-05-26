@@ -18,6 +18,7 @@
     <div id='selection'> 
         <span> Select whether you want to create a character or a Dungeon Master's Profile. </span> 
 
+        <form> 
         <?php
             try {
             $dbUrl = getenv('DATABASE_URL');
@@ -40,6 +41,7 @@
                 
             }
         ?>
+        </form>
         <button id="character-creation" type="button"> Character Creation </button>
         <button id="dm-creation" type="button"> DM profile creation </button>
 
