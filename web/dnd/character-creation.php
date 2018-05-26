@@ -62,7 +62,7 @@ function isCharacterSelected() {
 
             # PLAYER SELECTION
             echo '<div>';
-            echo '<span> Choose a character...';
+            echo '<span> Choose a character...<br>';
             foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
             {
                 #print out all characters from the database
@@ -75,7 +75,7 @@ function isCharacterSelected() {
 
             # DM SELECTION
             echo '<div>';
-            echo '<span> Choose a Dungeon Masters Profile...';
+            echo '<span> Choose a Dungeon Masters Profile...<br>';
             
             foreach ($db->query('SELECT dmname, gamename, tableimgpath FROM dm') as $row)
             {
