@@ -78,7 +78,7 @@ function isCharacterSelected() {
             echo ' <button id="game-creation-btn" type="button" onclick="window.location.href=\'game-creation.php\'"> Create a new Game </button><br>';
             echo '</div>';
 
-            echo '<hr>';
+            echo 'OR...';
 
             # PLAYER SELECTION
             echo '<div id="character-selection">';

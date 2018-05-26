@@ -44,6 +44,8 @@ padding: 25px;
     display:flex;
     flex-direction: column;
     padding: 10px;
+    border-style: ridge;
+    border-color: orange;
 }
 
 /* Div for selecting character profiles */
@@ -51,6 +53,8 @@ padding: 25px;
     display:flex;
     flex-direction: column;
     padding: 10px;
+    border-style: ridge;
+    border-color: blue;
 }
 
 #createCharacterButton {
