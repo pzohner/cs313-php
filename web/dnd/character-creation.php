@@ -40,7 +40,7 @@
                 echo '<input type="radio" name="character" > ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
                 
             }
-            echo '<button id="character-creation" type="button"> Character Creation </button>';
+            echo '<button id="character-creation" type="button"> Character Creation </button><br>';
 
 
             foreach ($db->query('SELECT dmname, gamename, tableimgpath FROM dm') as $row)
@@ -48,7 +48,7 @@
                 echo '<input type="radio" name="dm"> ' . $row['dmname'] . ' with game named ' . $row['gamename'] . ' with game board image at ' . $row['tableimgpath']. '<br/>';
                 
             }
-        echo ' <button id="dm-creation" type="button"> DM profile creation </button>';
+        echo ' <button id="dm-creation" type="button"> DM profile creation </button><br>';
 
         ?>
         </form>
