@@ -24,7 +24,7 @@
         
     </div>
 
-    <button type="button" onclick=window.location.href = 'character-creation.php' "> Skip login (will be removed later) </button>
+    <button type="button" onclick="window.location.href = 'character-creation.php' "> Skip login (will be removed later) </button>
 
 </body>
 </html>
