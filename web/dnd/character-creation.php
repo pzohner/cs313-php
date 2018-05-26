@@ -18,7 +18,6 @@
     <div id='selection'> 
         <span> Select the DM or character you wish to use to play or create a new one! </span> 
 
-        <form> 
         <?php
             try {
             $dbUrl = getenv('DATABASE_URL');
@@ -51,7 +50,6 @@
         echo ' <button id="dm-creation" type="button"> Create new DM Profile </button><br>';
 
         ?>
-        </form>
         
 
         <button id="enterGame" type="button"> Enter Game </button>
