@@ -75,7 +75,7 @@ function isCharacterSelected() {
                 
             }
             echo ' <button id="dm-creation" type="button" onclick="window.location.href=\'dm-profile-creation.php\'"> Create new DM Profile </button><br>';
-            echo ' <button id="game-creation" type="button"> Create a new Game </button><br>';
+            echo ' <button id="game-creation" type="button" onclick="window.location.href=\'game-creation.php\'"> Create a new Game </button><br>';
             echo '</div>';
 
             echo '<hr>';
