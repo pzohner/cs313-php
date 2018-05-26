@@ -13,6 +13,12 @@
 	<!-- Including my personal styles -->
     <link href="styles.css" rel="stylesheet" type="text/css">
     <script>
+
+
+    // $(document).ready(function () {
+    //     document.getElementById("rdbSelect").click()
+
+    // })
 function isDMSelected() {
     var dmradio = document.getElementsByClassName("dmradio");
 
