@@ -16,9 +16,11 @@
 
 
     $(document).ready(function () {
+        // Disable create game button until they have selected a DM profile
         $("#game-creation").attr("disabled", "disabled");
 
     })
+
 function isDMSelected() {
     var dmradio = document.getElementsByClassName("dmradio");
 

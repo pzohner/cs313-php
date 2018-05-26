@@ -26,3 +26,13 @@
     flex-direction: row;
     padding: 10px;
 }
+
+/* Div for selecting Dm profiles */
+#dm-selection {
+    padding: 10px;
+}
+
+/* Div for selecting character profiles */
+#character-selection {
+    padding: 10px;
+}
