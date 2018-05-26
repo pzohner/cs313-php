@@ -60,14 +60,16 @@ function isCharacterSelected() {
                 die();
             }
 
+            echo '<div>';
             foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
             {
-                echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected()"> ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
                 
+                echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected()"> ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
             }
             echo '<button id="character-creation" type="button"> Create a new Character </button><br>';
+            echo '</div>';
 
-
+            echo '<div>';
             foreach ($db->query('SELECT dmname, gamename, tableimgpath FROM dm') as $row)
             {
                 echo '<input type="radio" name="player-selection" class="dmradio" onclick="isDMSelected()"> ' . $row['dmname'] . ' with game named ' . $row['gamename'] . ' with game board image at ' . $row['tableimgpath']. '<br/>';
@@ -75,6 +77,8 @@ function isCharacterSelected() {
             }
         echo ' <button id="dm-creation" type="button"> Create new DM Profile </button><br>';
         echo ' <button id="game-creation" type="button"> Create a new Game </button><br>';
+        echo '</div>';
+        
 
         ?>
         
