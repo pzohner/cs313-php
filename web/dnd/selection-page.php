@@ -102,7 +102,7 @@ function isCharacterSelected() {
                 #print out all characters from the database
                 echo '<input type="radio" name="games-selection-btn" class="gamesradio" onclick="isCharacterSelected()"> ' . $row['gamename'] . ' hosted by DM ' . $row['dmname']. '<br/>';
             }
-            echo '<button id="enterGame" type="button"> Enter Game </button><br>';
+            echo '<button id="enterGame" type="button" onclick="window.location.href=\'play-game.php\'"> Enter Game </button><br>';
 
             echo '</div>';
             
