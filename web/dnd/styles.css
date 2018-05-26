@@ -39,6 +39,7 @@ border-color: green;
     display:flex;
     flex-direction: row;
     padding: 10px;
+    justify-content: space-between;
 }
 
 /* Div for selecting Dm profiles */
