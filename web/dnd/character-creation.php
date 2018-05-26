@@ -71,7 +71,7 @@ function isCharacterSelected() {
             echo '<button id="character-creation" type="button"> Create a new Character </button><br>';
             echo '</div>';
 
-            echo '<hr>';
+            echo '<span> OR... </span>';
 
             # DM SELECTION
             echo '<div>';
