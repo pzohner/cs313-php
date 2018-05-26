@@ -40,9 +40,16 @@ try {
             echo '<h1>' . $row['gamename'] . '<h1/>';
             }
 
-   
 
+    #print out each character onto the map
+    foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
+            {
+
+                echo '<img src="' . $row['imgpath'] . '">';
+
+            }
     echo '</body>';
+            
 ?>
 
 </html>
