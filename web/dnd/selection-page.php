@@ -99,8 +99,8 @@ function isCharacterSelected() {
             echo '<span> Choose a game to join...<br>';
             foreach ($db->query('SELECT games.gamename, dm.dmname FROM games, dm where games.dmid = dm.id ') as $row)
             {
-                #print out all characters from the database
-                echo '<input type="radio" name="games-selection-btn" class="gamesradio" onclick="isCharacterSelected()"> ' . $row['gamename'] . ' hosted by DM ' . $row['dmname']. '<br/>';
+                #Games available
+                echo '<input type="radio" name="games-selection-btn" class="gamesradio" onclick="isCharacterSelected()" value="' . $row['gamename'] . '">' . $row['gamename'] . ' hosted by DM ' . $row['dmname']. '<br/>';
             }
             echo '<button id="enterGame" type="button" onclick="window.location.href=\'play-game.php\'"> Enter Game </button><br>';
 
