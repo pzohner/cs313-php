@@ -26,7 +26,7 @@ function isDMSelected() {
 
     for(var i = 0; i < dmradio.length; i++) {
         if (dmradio[i].checked) {
-            document.getElementById("game-creation").disabled = false;
+            document.getElementById("game-creation-btn").disabled = false;
         }
     }
 }
@@ -36,7 +36,7 @@ function isCharacterSelected() {
 
     for(var i = 0; i < characterradio.length; i++) {
         if (characterradio[i].checked) {
-            document.getElementById("game-creation").disabled = true;
+            document.getElementById("game-creation-btn").disabled = true;
         }
     }
 }
