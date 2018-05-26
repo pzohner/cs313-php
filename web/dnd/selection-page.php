@@ -75,7 +75,6 @@ function isCharacterSelected() {
             }
             echo '<button id="createCharacterButton" type="button" onclick="window.location.href=\'character-creation.php\'"> Create a new Character </button><br>';
             echo '</div>';
-            echo '</div>';
 
             echo 'OR...';
 
@@ -92,6 +91,8 @@ function isCharacterSelected() {
             echo ' <button id="dm-creation-btn" type="button" onclick="window.location.href=\'dm-profile-creation.php\'"> Create new DM Profile </button><br>';
             echo ' <button id="game-creation-btn" type="button" onclick="window.location.href=\'game-creation.php\'"> Create a new Game </button><br>';
             echo '</div>';
+            echo '</div>';
+            
 
             # GAME SELECTION
             echo '<div id="game-selection">';
