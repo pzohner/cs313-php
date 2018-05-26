@@ -43,7 +43,7 @@ function isCharacterSelected() {
 <body>
     <div id='selection'> 
         <span> Select the DM or character you wish to use to play or create a new one! </span> 
-
+        <div id="playerordm">
         <?php
             try {
             $dbUrl = getenv('DATABASE_URL');
@@ -81,7 +81,7 @@ function isCharacterSelected() {
         
 
         ?>
-        
+        </div>
 
         <button id="enterGame" type="button"> Enter Game </button>
         
