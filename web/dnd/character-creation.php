@@ -45,7 +45,7 @@ function isCharacterSelected() {
 <body>
     <div id='selection'> 
         <span> Select the DM or character you wish to use to play or create a new one! </span> 
-        <div id="playerordm">
+        
         <?php
             try {
             $dbUrl = getenv('DATABASE_URL');
@@ -62,6 +62,8 @@ function isCharacterSelected() {
                 die();
             }
 
+
+            echo '<div id="playerordm">';
             # DM SELECTION
             echo '<div id="dm-selection">';
             echo '<span> Choose a Dungeon Masters Profile...<br>';
@@ -75,11 +77,9 @@ function isCharacterSelected() {
             echo ' <button id="dm-creation" type="button"> Create new DM Profile </button><br>';
             echo ' <button id="game-creation" type="button"> Create a new Game </button><br>';
             echo '</div>';
-            
 
             echo '<hr>';
 
-        
             # PLAYER SELECTION
             echo '<div id="character-selection">';
             echo '<span> Choose a character...<br>';
@@ -90,10 +90,20 @@ function isCharacterSelected() {
             }
             echo '<button id="character-creation" type="button"> Create a new Character </button><br>';
             echo '</div>';
-        ?>
-        </div>
+            echo '</div>';
 
-        <button id="enterGame" type="button"> Enter Game </button>
+            echo '<div id="game-selection">';
+            echo '<span> Choose a character...<br>';
+            foreach ($db->query('SELECT games.gamename, dm.dmname FROM games, dm where games.dmid = dm.id ') as $row)
+            {
+                #print out all characters from the database
+                echo '<input type="radio" name="games-selection" class="gamesradio" onclick="isCharacterSelected()"> ' . $row['gamename'] . ' hosted by  ' . $row['dmname']. '<br/>';
+            }
+            echo '<button id="enterGame" type="button"> Enter Game </button><br>';
+
+            echo '</div>';
+            
+        ?>
         
     </div>
 
