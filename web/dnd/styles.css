@@ -21,6 +21,10 @@
 
 }
 
+#game-selection {
+padding: 25px;
+}
+
 #playerordm {
     display:flex;
     flex-direction: row;

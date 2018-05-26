@@ -92,12 +92,14 @@ function isCharacterSelected() {
             echo '</div>';
             echo '</div>';
 
+
+            # GAME SELECTION
             echo '<div id="game-selection">';
-            echo '<span> Choose a character...<br>';
+            echo '<span> Choose a game to join...<br>';
             foreach ($db->query('SELECT games.gamename, dm.dmname FROM games, dm where games.dmid = dm.id ') as $row)
             {
                 #print out all characters from the database
-                echo '<input type="radio" name="games-selection" class="gamesradio" onclick="isCharacterSelected()"> ' . $row['gamename'] . ' hosted by  ' . $row['dmname']. '<br/>';
+                echo '<input type="radio" name="games-selection" class="gamesradio" onclick="isCharacterSelected()"> ' . $row['gamename'] . ' hosted by DM ' . $row['dmname']. '<br/>';
             }
             echo '<button id="enterGame" type="button"> Enter Game </button><br>';
 
