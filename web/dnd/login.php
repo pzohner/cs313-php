@@ -11,13 +11,13 @@
 	 crossorigin="anonymous">
 
 	<!-- Including my personal styles -->
-	<!-- <link href="intro/styles.css" rel="stylesheet" type="text/css"> -->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    
 </head>
 <body>
     <div id='login'> 
         Username: <input type="text">
         Password: <input type="text">
-
     </div>
 </body>
 </html>
