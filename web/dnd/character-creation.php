@@ -34,7 +34,7 @@
                 die();
             }
 
-            foreach ($db->query('SELECT avatarname, imgpath password FROM Character') as $row)
+            foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
             {
                 echo 'charactername: ' . $row['avatarname'] . 'imgpath: ' . $row['imgpath']. '<br/>';
 
