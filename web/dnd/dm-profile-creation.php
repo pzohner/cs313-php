@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id='dm-profile-creation'> 
-        <span> Enter a name to create your DM Profile. You must have a DM profile to create a game. </span> 
+        <span> Enter a name to create your DM Profile. You must have a DM profile to create a game. </span> <br>
         DM name: <input type="text">
 
     <button id="dmProfileCreationComplete" type="button" onclick="window.location.href='selection-page.php'"> Finish </button>
