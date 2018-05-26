@@ -22,20 +22,21 @@
 function isDMSelected() {
     var dmradio = document.getElementsByClassName("dmradio");
 
-
     for(var i = 0; i < dmradio.length; i++) {
         if (dmradio[i].checked) {
-            document.getElementById("enterGame").disabled = true;
+            document.getElementById("game-creation").disabled = false;
         }
     }
+}
 
+function isCharacterSelected() {
+    var characterradio = document.getElementsByClassName("characterradio");
 
-    // for each (var dm in dmradio) {
-    //     if (dm.checked) {
-    //         document.getElementById("enterGame").disabled = true;
-    //     }
-
-    // }
+    for(var i = 0; i < characterradio.length; i++) {
+        if (characterradio[i].checked) {
+            document.getElementById("game-creation").disabled = true;
+        }
+    }
 }
 </script>
 </head>
@@ -61,7 +62,7 @@ function isDMSelected() {
 
             foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
             {
-                echo '<input type="radio" name="player-selection" class="characterradio" > ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
+                echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected()"> ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
                 
             }
             echo '<button id="character-creation" type="button"> Create a new Character </button><br>';
@@ -73,6 +74,7 @@ function isDMSelected() {
                 
             }
         echo ' <button id="dm-creation" type="button"> Create new DM Profile </button><br>';
+        echo ' <button id="game-creation" type="button"> Create a new Game </button><br>';
 
         ?>
         
