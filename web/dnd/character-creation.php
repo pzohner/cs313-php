@@ -44,7 +44,7 @@
 
             foreach ($db->query('SELECT dmname, gamename, tableimgpath FROM dm') as $row)
             {
-                echo '<input type="radio" name="player-selection" class="dmradio" onclick="isDMSelected"> ' . $row['dmname'] . ' with game named ' . $row['gamename'] . ' with game board image at ' . $row['tableimgpath']. '<br/>';
+                echo '<input type="radio" name="player-selection" class="dmradio" onclick="isDMSelected()"> ' . $row['dmname'] . ' with game named ' . $row['gamename'] . ' with game board image at ' . $row['tableimgpath']. '<br/>';
                 
             }
         echo ' <button id="dm-creation" type="button"> Create new DM Profile </button><br>';
