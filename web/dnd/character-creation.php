@@ -22,7 +22,7 @@
 function isDMSelected() {
     var dmradio = document.getElementsByClassName("dmradio");
 
-    for each (dm in dmradio) {
+    for each (var dm in dmradio) {
         if (if dm.checked) {
             document.getElementById("enterGame").disabled = true;
         }
