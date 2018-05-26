@@ -16,15 +16,14 @@
 </head>
 <body>
     <div id='login'> 
-        <span> Please log in </span> 
-        Username: <input type="text">
-        Password: <input type="text">
+        <span> Select whether you want to create a character or a Dungeon Master's Profile. </span> 
 
-    <button id="loginbutton" type="button"> Login </button>
+        <button id="character-creation" type="button"> Character Creation </button>
+        <button id="dm-creation" type="button"> DM profile creation </button>
+
+        <button id="enterGame" type="button"> Enter Game </button>
         
     </div>
-
-    <button type="button" onclick=window.location.href = 'character-creation.php' "> Skip login (will be removed later) </button>
 
 </body>
 </html>
