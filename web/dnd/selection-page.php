@@ -86,7 +86,7 @@ function isCharacterSelected() {
             foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
             {
                 #print out all characters from the database
-                echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected()"> ' . $row['avatarname'] . ' with image at ' . '<img src="'. $row['imgpath'] .'">' . '<br/>';
+                echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected()"> ' . $row['avatarname'] . ' ' . '<img src="'. $row['imgpath'] .'">' . '<br/>';
             }
             echo '<button id="createCharacterButton" type="button" onclick="window.location.href=\'character-creation.php\'"> Create a new Character </button><br>';
             echo '</div>';
