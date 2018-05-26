@@ -15,12 +15,12 @@
     
 </head>
 <body>
-    <div id='character-creation'> 
+    <div id='game-creation'> 
         <span> Please select a game name, and an img to upload as the background. </span> 
         Game name: <input type="text">
         Upload an tabletop image: <input type="file">
 
-    <button id="createCharacterComplete" type="button" onclick="window.location.href='selection-page.php'"> Finish </button>
+    <button id="gameCreationComplete" type="button" onclick="window.location.href='selection-page.php'"> Finish </button>
         
     </div>
 
