@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id='selection'> 
-        <span> Select whether you want to create a character or a Dungeon Master's Profile. </span> 
+        <span> Select the DM or character you wish to use to play or create a new one! </span> 
 
         <form> 
         <?php
@@ -40,7 +40,7 @@
                 echo '<input type="radio" name="player-selection" > ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
                 
             }
-            echo '<button id="character-creation" type="button"> Character Creation </button><br>';
+            echo '<button id="character-creation" type="button"> Create a new Character </button><br>';
 
 
             foreach ($db->query('SELECT dmname, gamename, tableimgpath FROM dm') as $row)
@@ -48,7 +48,7 @@
                 echo '<input type="radio" name="player-selection"> ' . $row['dmname'] . ' with game named ' . $row['gamename'] . ' with game board image at ' . $row['tableimgpath']. '<br/>';
                 
             }
-        echo ' <button id="dm-creation" type="button"> DM profile creation </button><br>';
+        echo ' <button id="dm-creation" type="button"> Create new DM Profile </button><br>';
 
         ?>
         </form>
