@@ -19,5 +19,7 @@
         Username: <input type="text">
         Password: <input type="text">
     </div>
+
+    <button type="button"> Skip login (will be removed later) </button>
 </body>
 </html>
