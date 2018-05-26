@@ -67,7 +67,7 @@ function isCharacterSelected() {
         
             # PLAYER SELECTION
             echo '<div id="character-selection">';
-            echo '<span> Choose a character...</span><br>';
+            echo '<span> Choose a character...</span>';
             foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
             {
                 #print out all characters from the database
