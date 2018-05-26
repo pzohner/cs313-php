@@ -52,6 +52,15 @@ padding: 25px;
     padding: 10px;
 }
 
+#createCharacterButton {
+
+}
+
+img {
+    width: 50px;
+    height: auto;
+}
+
 
 /*********************************************
 * CHARACTER CREATION PAGE
