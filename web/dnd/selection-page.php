@@ -74,7 +74,7 @@ function isCharacterSelected() {
                 echo '<input type="radio" name="player-selection" class="dmradio" onclick="isDMSelected()"> ' . $row['dmname'] . ' with game named ' . $row['gamename'] . ' with game board image at ' . $row['tableimgpath']. '<br/>';
                 
             }
-            echo ' <button id="dm-creation" type="button"> Create new DM Profile </button><br>';
+            echo ' <button id="dm-creation" type="button" onclick="window.location.href=\'dm-profile-creation.php\'"> Create new DM Profile </button><br>';
             echo ' <button id="game-creation" type="button"> Create a new Game </button><br>';
             echo '</div>';
 
