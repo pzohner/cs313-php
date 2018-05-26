@@ -15,9 +15,31 @@
     
 </head>
 <body>
-    <div id='login'> 
+    <div id='selection'> 
         <span> Select whether you want to create a character or a Dungeon Master's Profile. </span> 
 
+        <?php
+            try {
+            $dbUrl = getenv('DATABASE_URL');
+
+            $dboptions = parse_url($dbUrl);
+
+            $user = $dboptions['user'];
+            $password = $dboptions['pass'];
+
+                $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
+            } catch (PDOEXCEPTION $ex)
+            {
+                echo 'Error!: ' . $ex->getMessage();
+                die();
+            }
+
+            foreach ($db->query('SELECT avatarname, imgpath password FROM Character') as $row)
+            {
+                echo 'charactername: ' . $row['avatarname'] . 'imgpath: ' . $row['imgpath']. '<br/>';
+
+            }
+        ?>
         <button id="character-creation" type="button"> Character Creation </button>
         <button id="dm-creation" type="button"> DM profile creation </button>
 
