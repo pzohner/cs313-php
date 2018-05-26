@@ -36,7 +36,7 @@
 
             foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
             {
-                echo '<input type="radio" name="player-selection" > ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
+                echo '<input type="radio" name="player-selection" class="characterradio" > ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
                 
             }
             echo '<button id="character-creation" type="button"> Create a new Character </button><br>';
@@ -44,7 +44,7 @@
 
             foreach ($db->query('SELECT dmname, gamename, tableimgpath FROM dm') as $row)
             {
-                echo '<input type="radio" name="player-selection"> ' . $row['dmname'] . ' with game named ' . $row['gamename'] . ' with game board image at ' . $row['tableimgpath']. '<br/>';
+                echo '<input type="radio" name="player-selection" class="dmradio" onclick="isDMSelected"> ' . $row['dmname'] . ' with game named ' . $row['gamename'] . ' with game board image at ' . $row['tableimgpath']. '<br/>';
                 
             }
         echo ' <button id="dm-creation" type="button"> Create new DM Profile </button><br>';
@@ -57,4 +57,16 @@
     </div>
 
 </body>
+<script>
+function isDMSelected() {
+    var dmradio = document.getElementsByClassName("dmradio");
+
+    foreach dm in dmradio {
+        if (if dm.checked) {
+            document.getElementById("enterGame").disabled = true;
+        }
+
+    }
+}
+</script>
 </html>
