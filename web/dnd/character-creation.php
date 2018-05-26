@@ -15,10 +15,10 @@
     <script>
 
 
-    // $(document).ready(function () {
-    //     document.getElementById("rdbSelect").click()
+    $(document).ready(function () {
+        $("#game-creation").attr("disabled", "disabled");
 
-    // })
+    })
 function isDMSelected() {
     var dmradio = document.getElementsByClassName("dmradio");
 
