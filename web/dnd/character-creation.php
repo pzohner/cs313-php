@@ -22,12 +22,19 @@
 function isDMSelected() {
     var dmradio = document.getElementsByClassName("dmradio");
 
-    for each (var dm in dmradio) {
+    dmradio.forEach(function(element) {
         if (dm.checked) {
             document.getElementById("enterGame").disabled = true;
         }
+    });
 
-    }
+
+    // for each (var dm in dmradio) {
+    //     if (dm.checked) {
+    //         document.getElementById("enterGame").disabled = true;
+    //     }
+
+    // }
 }
 </script>
 </head>
