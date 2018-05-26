@@ -12,7 +12,18 @@
 
 	<!-- Including my personal styles -->
     <link href="styles.css" rel="stylesheet" type="text/css">
-    
+    <script>
+function isDMSelected() {
+    var dmradio = document.getElementsByClassName("dmradio");
+
+    foreach dm in dmradio {
+        if (if dm.checked) {
+            document.getElementById("enterGame").disabled = true;
+        }
+
+    }
+}
+</script>
 </head>
 <body>
     <div id='selection'> 
@@ -57,16 +68,5 @@
     </div>
 
 </body>
-<script>
-function isDMSelected() {
-    var dmradio = document.getElementsByClassName("dmradio");
 
-    foreach dm in dmradio {
-        if (if dm.checked) {
-            document.getElementById("enterGame").disabled = true;
-        }
-
-    }
-}
-</script>
 </html>
