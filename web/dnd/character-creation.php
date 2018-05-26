@@ -36,8 +36,9 @@
 
             foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
             {
-                echo 'charactername: ' . $row['avatarname'] . 'imgpath: ' . $row['imgpath']. '<br/>';
-
+                echo '<input type="radio" name="gender" value="male"> ';
+                echo $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
+                
             }
         ?>
         <button id="character-creation" type="button"> Character Creation </button>
