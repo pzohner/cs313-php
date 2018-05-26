@@ -37,13 +37,22 @@
 
             foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
             {
-                echo '<input type="radio" name="gender" value="male"> ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
+                echo '<input type="radio" name="character" > ' . $row['avatarname'] . ' with image at ' . $row['imgpath']. '<br/>';
                 
             }
+            echo '<button id="character-creation" type="button"> Character Creation </button>';
+
+
+            foreach ($db->query('SELECT dmname, gamename, tableimgpath FROM dm') as $row)
+            {
+                echo '<input type="radio" name="dm"> ' . $row['dmname'] . ' with game named ' . $row['gamename'] . ' with game board image at ' . $row['tableimgpath']. '<br/>';
+                
+            }
+        echo ' <button id="dm-creation" type="button"> DM profile creation </button>';
+
         ?>
         </form>
-        <button id="character-creation" type="button"> Character Creation </button>
-        <button id="dm-creation" type="button"> DM profile creation </button>
+        
 
         <button id="enterGame" type="button"> Enter Game </button>
         
