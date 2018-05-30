@@ -27,13 +27,17 @@ echo 'page is working';
                 die();
             }
             
-            $stmt = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content)
-            VALUES (:book, :chapter, :verse, :content)');
-            $stmt->bindValue(':book', $book);
-            $stmt->bindValue(':chapter', $chapter);
-            $stmt->bindValue(':verse', $verse);
-            $stmt->bindValue(':content', $content);
-            $stmt->execute();
+            
+                $stmt = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content)
+                VALUES (:book, :chapter, :verse, :content)');
+                $stmt->bindValue(':book', $book);
+                $stmt->bindValue(':chapter', $chapter);
+                $stmt->bindValue(':verse', $verse);
+                $stmt->bindValue(':content', $content);
+                echo "$stmt";
+                $stmt->execute();
+            
+            
             // $db->query("INSERT INTO scriptures (book, chapter, verse, content) VALUES ('".$_POST["book"]."','".$_POST["chapter"]."','".$_POST["verse"]."','".$_POST["content"]."')");
             echo 'INSERT WORKED!';
             // (\'$_POST['book']\', $_POST['chapter'], $_POST['verse'], \'$_POST['content']\')")
