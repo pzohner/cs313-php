@@ -1,4 +1,5 @@
 <?php
+echo 'page is working';
 if (isset($_POST['scriptureSubmit'])) {
         echo 'scriptureSubmit was set!';
         try {
