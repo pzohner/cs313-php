@@ -5,6 +5,12 @@ echo 'page is working';
         $chapter = $_POST['chapter'];
         $verse = $_POST['verse'];
         $content = $_POST['content'];
+
+        foreach ($_POST['scriptopic'] as $topic) {
+            echo $topic;
+        }
+     
+
         echo "$book";
         echo "$chapter";
         echo "$verse";
@@ -30,6 +36,18 @@ echo 'page is working';
             
                 $stmt = $db->prepare('INSERT INTO scriptures (id, book, chapter, verse, content)
                 VALUES (5, :book, :chapter, :verse, :content);');
+                $stmt->bindValue(':book', $book);
+                $stmt->bindValue(':chapter', $chapter);
+                $stmt->bindValue(':verse', $verse);
+                $stmt->bindValue(':content', $content);
+                if (!$stmt) {
+                    echo "stmt not set";
+                }
+                $stmt->execute();
+
+
+                $stmt = $db->prepare('INSERT INTO scriptopic (topicID, scriptureID)
+                VALUES (:topicID);');
                 $stmt->bindValue(':book', $book);
                 $stmt->bindValue(':chapter', $chapter);
                 $stmt->bindValue(':verse', $verse);
