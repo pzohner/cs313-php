@@ -12,10 +12,10 @@
 <form action="insertdata.php" method="post">
 
 Book:    <input type='text' name='book' value=''> <br>
-Chapter: <input type='text' name='chapter' value=''> <br> 
-Verse:   <input type='text' name='verse' value=''> <br> 
+Chapter: <input type='number' name='chapter' value=''> <br> 
+Verse:   <input type='number' name='verse' value=''> <br> 
 <span> Content </span>
-<textarea rows="4" cols="50"></textarea> 
+<textarea rows="4" cols="50" name="content" ></textarea> 
 
 <?php
     
