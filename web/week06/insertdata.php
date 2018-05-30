@@ -1,13 +1,16 @@
 <?php
 echo 'page is working';
-if (isset($_POST['scriptureSubmit'])) {
-        echo 'scriptureSubmit was set!';
 
         $book = $_POST['book'];
         $chapter = $_POST['chapter'];
         $verse = $_POST['verse'];
         $content = $_POST['content'];
-        
+        echo "$book";
+        echo "$chapter";
+        echo "$verse";
+        echo "$content";
+
+
         try {
             $dbUrl = getenv('DATABASE_URL');
         
@@ -34,5 +37,4 @@ if (isset($_POST['scriptureSubmit'])) {
             // $db->query("INSERT INTO scriptures (book, chapter, verse, content) VALUES ('".$_POST["book"]."','".$_POST["chapter"]."','".$_POST["verse"]."','".$_POST["content"]."')");
             echo 'INSERT WORKED!';
             // (\'$_POST['book']\', $_POST['chapter'], $_POST['verse'], \'$_POST['content']\')")
-    }
 ?>
