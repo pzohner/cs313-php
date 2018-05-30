@@ -28,17 +28,15 @@ $user = $dboptions['user'];
 $password = $dboptions['pass'];
 
     $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
-    echo 'PLSQL connection successful';
 } catch (PDOEXCEPTION $ex)
 {
     echo 'Error!: ' . $ex->getMessage();
     die();
 }
 
-foreach ($db->query('SELECT username, password FROM note_user') as $row)
+foreach ($db->query('SELECT name FROM topic') as $row)
 {
-    echo 'user: ' . $row['username'] . 'password: ' . $row['password']. '<br/>';
-
+    echo "<div><input type='checkbox' name='scriptopic'>" . $row['name'] . "</div>";
 }
 ?>
 
