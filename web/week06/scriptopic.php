@@ -19,6 +19,7 @@ Verse:   <input type='text' name='verse' value=''> <br>
 
 <?php
     if (isset($_POST['scriptureSubmit'])) {
+        echo 'scriptureSubmit was set!';
         try {
             $dbUrl = getenv('DATABASE_URL');
         
@@ -35,6 +36,7 @@ Verse:   <input type='text' name='verse' value=''> <br>
             }
             
             $db->query("INSERT INTO scriptures (book, chapter, verse, content) VALUES ('".$_POST["book"]."','".$_POST["chapter"]."','".$_POST["verse"]."','".$_POST["content"]."')");
+            echo 'INSERT WORKED!';
             // (\'$_POST['book']\', $_POST['chapter'], $_POST['verse'], \'$_POST['content']\')")
     }
 
