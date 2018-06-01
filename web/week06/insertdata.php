@@ -30,11 +30,9 @@ echo 'page is working';
                 die();
             }
             
-                $scriptureID = $db->lastInsertID("scripture_id_seq");
-
+                
                 $stmt = $db->prepare('INSERT INTO scriptures (id, book, chapter, verse, content)
-                VALUES (:id, :book, :chapter, :verse, :content);');
-                $stmt->bindValue(':id', $scriptureID);                
+                VALUES (:book, :chapter, :verse, :content);');
                 $stmt->bindValue(':book', $book);
                 $stmt->bindValue(':chapter', $chapter);
                 $stmt->bindValue(':verse', $verse);
@@ -43,6 +41,24 @@ echo 'page is working';
                     echo "stmt not set";
                 }
                 $stmt->execute();
+
+
+
+                // // get the new id
+                // $scriptureId = $db->lastInsertId("scripture_id_seq");
+                // // Now go through each topic id in the list from the user's checkboxes
+                // foreach ($topicIds as $topicId)
+                // {
+                //     echo "ScriptureId: $scriptureId, topicId: $topicId";
+                //     // Again, first prepare the statement
+                //     $statement = $db->prepare('INSERT INTO topicscripturelink(scriptureId, topicId) VALUES(:scriptureId, :topicId)');
+                //     // Then, bind the values
+                //     $statement->bindValue(':scriptureId', $scriptureId);
+                //     $statement->bindValue(':topicId', $topicId);
+                //     $statement->execute();
+                // }
+
+
 
                 // $topicID = 0;
                 // // foreach ($scriptTopics as $scriptTopic) {
