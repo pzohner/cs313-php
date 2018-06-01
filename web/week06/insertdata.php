@@ -49,10 +49,10 @@ echo 'page is working';
                 {
                     echo "ScriptureId: $scriptureID, topicId: $scriptopic";
                     // Again, first prepare the statement
-                    $statement = $db->prepare('INSERT INTO topicscripturelink(scriptureId, topicId) VALUES(:scriptureId, :topicId)');
+                    $statement = $db->prepare('INSERT INTO topicscripturelink(scriptureid, topicid) VALUES(:scriptureid, :topicid)');
                     // Then, bind the values
-                    $statement->bindValue(':scriptureId', $scriptureID);
-                    $statement->bindValue(':topicId', $scriptopic);
+                    $statement->bindValue(':scriptureid', $scriptureID);
+                    $statement->bindValue(':topicid', $scriptopic);
                     $statement->execute();
                 }
 
