@@ -72,7 +72,7 @@ echo 'page is working';
                 // }
                 // $stmt->execute();
             
-            
+                header("Location: showTopics.php");
             // $db->query("INSERT INTO scriptures (book, chapter, verse, content) VALUES ('".$_POST["book"]."','".$_POST["chapter"]."','".$_POST["verse"]."','".$_POST["content"]."')");
             echo 'INSERT WORKED!';
             // (\'$_POST['book']\', $_POST['chapter'], $_POST['verse'], \'$_POST['content']\')")
