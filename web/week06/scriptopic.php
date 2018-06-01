@@ -35,9 +35,10 @@ Verse:   <input type='number' name='verse' value=''> <br>
         die();
     }
 
-    foreach ($db->query('SELECT name FROM topic') as $row)
+    foreach ($db->query('SELECT id, name FROM topic') as $row)
     {
-        echo "<div><input type='checkbox' name='scriptopic[]'>" . $row['name'] . "</div>";
+        $id = row['id'];
+        echo "<div><input type='checkbox' name='scriptopic[]' value='$id'>" . $row['name'] . "</div>";
     }
 
 ?>
