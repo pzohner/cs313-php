@@ -12,7 +12,7 @@
 
 <?php
     
-
+echo 'Attempting to connect to database';
     try {
     $dbUrl = getenv('DATABASE_URL');
 
@@ -23,9 +23,13 @@
 
         $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
     
-    $statement = $db->prepare('Select id, name, book, chapter, verse content from scripture');
+    echo 'About to execute first statement';
+        
+    $statement = $db->prepare('Select id, name, book, chapter, verse, content from scriptures');
     $statement->execute();
 
+    echo 'got data from scriptures';
+    
     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
         echo '<p>';
         echo $row['book'] . ' ' . $row['chapter'] . '  '.$row['verse'] . ' ' . $row['content'];
