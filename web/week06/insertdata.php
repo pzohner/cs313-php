@@ -47,7 +47,7 @@ echo 'page is working';
                 // Now go through each topic id in the list from the user's checkboxes
                 foreach ($scriptTopics as $scriptopic)
                 {
-                    echo "ScriptureId: $scriptureId, topicId: $topicId";
+                    echo "ScriptureId: $scriptureID, topicId: $scriptopic";
                     // Again, first prepare the statement
                     $statement = $db->prepare('INSERT INTO topicscripturelink(scriptureId, topicId) VALUES(:scriptureId, :topicId)');
                     // Then, bind the values
