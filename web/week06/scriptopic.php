@@ -37,7 +37,7 @@ Verse:   <input type='number' name='verse' value=''> <br>
 
     foreach ($db->query('SELECT name FROM topic') as $row)
     {
-        echo "<div><input type='checkbox' name='scriptopic[] value='" . $row['name'] . "'>" . $row['name'] . "</div>";
+        echo "<div><input type='checkbox' name='scriptopic[]'>" . $row['name'] . "</div>";
     }
 
 ?>
