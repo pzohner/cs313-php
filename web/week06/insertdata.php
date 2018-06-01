@@ -44,19 +44,19 @@ echo 'page is working';
                 }
                 $stmt->execute();
 
-                $topicID = 0;
-                // foreach ($scriptTopics as $scriptTopic) {
-                //     echo "ScriptureId: $scriptureId, topicId: $topicId";
-                // }
+                // $topicID = 0;
+                // // foreach ($scriptTopics as $scriptTopic) {
+                // //     echo "ScriptureId: $scriptureId, topicId: $topicId";
+                // // }
 
-                $stmt = $db->prepare('INSERT INTO scriptopic (topicID, scriptureID)
-                VALUES (:topicID, scriptureID);');
-                $stmt->bindValue(':scriptureID', $scriptureID);
-                $stmt->bindValue(':topicID', $topicID);
-                if (!$stmt) {
-                    echo "stmt not set";
-                }
-                $stmt->execute();
+                // $stmt = $db->prepare('INSERT INTO scriptopic (topicID, scriptureID)
+                // VALUES (:topicID, scriptureID);');
+                // $stmt->bindValue(':scriptureID', $scriptureID);
+                // $stmt->bindValue(':topicID', $topicID);
+                // if (!$stmt) {
+                //     echo "stmt not set";
+                // }
+                // $stmt->execute();
             
             
             // $db->query("INSERT INTO scriptures (book, chapter, verse, content) VALUES ('".$_POST["book"]."','".$_POST["chapter"]."','".$_POST["verse"]."','".$_POST["content"]."')");
