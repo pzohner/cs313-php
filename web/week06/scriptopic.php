@@ -29,17 +29,17 @@ Verse:   <input type='number' name='verse' value=''> <br>
     $password = $dboptions['pass'];
 
         $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
-    } catch (PDOEXCEPTION $ex)
-    {
-        echo 'Error!: ' . $ex->getMessage();
-        die();
-    }
-
+    
     foreach ($db->query('SELECT id, name FROM topic') as $row)
     {
-        $id = row['id'];
+        $id = $row['id'];
         echo "<div><input type='checkbox' name='scriptopic[]' value='$id'>" . $row['name'] . "</div>";
     }
+} catch (PDOEXCEPTION $ex)
+{
+    echo 'Error!: ' . $ex->getMessage();
+    die();
+}
 
 ?>
   
