@@ -31,7 +31,7 @@ echo 'page is working';
             }
             
                 
-                $stmt = $db->prepare('INSERT INTO scriptures (id, book, chapter, verse, content)
+                $stmt = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content)
                 VALUES (:book, :chapter, :verse, :content);');
                 $stmt->bindValue(':book', $book);
                 $stmt->bindValue(':chapter', $chapter);
