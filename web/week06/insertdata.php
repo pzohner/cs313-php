@@ -44,17 +44,15 @@ echo 'page is working';
                 }
                 $stmt->execute();
 
-                
-                foreach ($scriptTopics as $scriptTopic) {
-                    echo "ScriptureId: $scriptureId, topicId: $topicId";
-                }
+                $topicID = 0;
+                // foreach ($scriptTopics as $scriptTopic) {
+                //     echo "ScriptureId: $scriptureId, topicId: $topicId";
+                // }
 
                 $stmt = $db->prepare('INSERT INTO scriptopic (topicID, scriptureID)
                 VALUES (:topicID, scriptureID);');
-                $stmt->bindValue(':book', $book);
-                $stmt->bindValue(':chapter', $chapter);
-                $stmt->bindValue(':verse', $verse);
-                $stmt->bindValue(':content', $content);
+                $stmt->bindValue(':scriptureID', $scriptureID);
+                $stmt->bindValue(':topicID', $topicID);
                 if (!$stmt) {
                     echo "stmt not set";
                 }
