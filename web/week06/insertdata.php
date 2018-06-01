@@ -5,10 +5,7 @@ echo 'page is working';
         $chapter = $_POST['chapter'];
         $verse = $_POST['verse'];
         $content = $_POST['content'];
-
-        foreach (($_POST['scriptopic']) as $topic) {
-            echo $topic;
-        }
+        $scriptTopics = $_POST['scriptopic'];
      
 
         echo "$book";
@@ -33,9 +30,11 @@ echo 'page is working';
                 die();
             }
             
-            
+                $scriptureID = $db->lastInsertID("scripture_id_seq");
+
                 $stmt = $db->prepare('INSERT INTO scriptures (id, book, chapter, verse, content)
-                VALUES (6, :book, :chapter, :verse, :content);');
+                VALUES (:id, :book, :chapter, :verse, :content);');
+                $stmt->bindValue(':id', $scriptureID);                
                 $stmt->bindValue(':book', $book);
                 $stmt->bindValue(':chapter', $chapter);
                 $stmt->bindValue(':verse', $verse);
@@ -45,9 +44,13 @@ echo 'page is working';
                 }
                 $stmt->execute();
 
+                
+                foreach ($scriptTopics as $scriptTopic) {
+                    echo "ScriptureId: $scriptureId, topicId: $topicId";
+                }
 
                 $stmt = $db->prepare('INSERT INTO scriptopic (topicID, scriptureID)
-                VALUES (:topicID);');
+                VALUES (:topicID, scriptureID);');
                 $stmt->bindValue(':book', $book);
                 $stmt->bindValue(':chapter', $chapter);
                 $stmt->bindValue(':verse', $verse);
