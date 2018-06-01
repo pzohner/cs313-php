@@ -24,11 +24,7 @@ echo 'page is working';
         
                 $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch (PDOEXCEPTION $ex)
-            {
-                echo 'Error!: ' . $ex->getMessage();
-                die();
-            }
+            
             
                 
                 $stmt = $db->prepare('INSERT INTO scriptures (book, chapter, verse, content)
@@ -56,7 +52,11 @@ echo 'page is working';
                     $statement->execute();
                 }
 
-
+            } catch (PDOEXCEPTION $ex)
+            {
+                echo 'Error!: ' . $ex->getMessage();
+                die();
+            }
 
                 // $topicID = 0;
                 // // foreach ($scriptTopics as $scriptTopic) {
