@@ -25,7 +25,7 @@ echo 'Attempting to connect to database';
     
     echo 'About to execute first statement';
         
-    $statement = $db->prepare('Select id, name, book, chapter, verse, content from scriptures');
+    $statement = $db->prepare('Select id, book, chapter, verse, content from scriptures');
     $statement->execute();
 
     echo 'got data from scriptures';
