@@ -16,16 +16,14 @@
 </head>
 <body>
 
-
-
-    <div id='character-creation' action='character-creation.php' method='post'> 
+    <form id='character-creation' action='character-creation.php' method='post'> 
         <span> Choose a name and upload an image to create your character! </span> 
         Character name: <input type="text" name='avatarname'>
         Upload an image: <input type="file">
 
     <button id="createCharacterComplete" type="submit" > Finish </button>
     <!-- onclick="window.location.href='selection-page.php'" -->
-    </div>
+    </form>
 
 
     <?php
