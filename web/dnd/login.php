@@ -17,8 +17,8 @@
 <body>
     <form id='login' action="login.php" method='post'> 
         <span> Please log in </span> 
-        Username: <input type="text" name='username'>
-        Password: <input type="password" name = 'password'>
+        Username: <input type="text" name='username' value='porter'>
+        Password: <input type="password" name = 'password' value='dndrocks'>
 
     <button id="loginbutton" type="submit"> Login </button>
         
