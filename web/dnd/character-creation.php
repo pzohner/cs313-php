@@ -35,7 +35,7 @@
 // Needed in order for php to accept file uploads!
 // ini_set('file_uploads', 'on');
 
-$target_dir = "dnd/images/";
+$target_dir = "images/";
 $target_file = $target_dir . basename($_FILES["characterpic"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
