@@ -15,15 +15,53 @@
     
 </head>
 <body>
-    <div id='login'> 
+    <form id='login' action="login.php" method='post'> 
         <span> Please log in </span> 
-        Username: <input type="text">
-        Password: <input type="text">
+        Username: <input type="text" name='username'>
+        Password: <input type="text" name = 'password'>
 
-    <button id="loginbutton" type="button"> Login </button>
+    <button id="loginbutton" type="submit"> Login </button>
         
-    </div>
+    </form>
 
+<?php
+
+    $usernameInput = $_POST['username'];
+    $passwordInput = $_POST['password'];
+
+
+    $dbUrl = getenv('DATABASE_URL');
+        
+    $dboptions = parse_url($dbUrl);
+
+    $user = $dboptions['user'];
+    $password = $dboptions['pass'];
+
+        $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo 'Database connection successful';
+        
+    
+        // $stmt = $db->prepare('SELECT username, password FROM users');
+
+        foreach ($db->prepare('SELECT username, password FROM users') as $row)
+        {
+            if ($usernameInput == $row['username'] && $passwordInput == $row['password']) {
+                echo 'login successful';
+                header("Location: selection-page.php");
+            }
+        }
+
+
+    // echo "    <form id='login' action='login.php'> ";
+    // echo "        <span> Please log in </span> ";
+    // echo "        Username: <input type='text'>";
+    // echo "        Password: <input type='text'>";
+
+    // echo "    <button id='loginbutton' type='submit'> Login </button>";
+            
+    // echo "    </form>";
+?>
     <button type="button" onclick="window.location.href='selection-page.php'"> Skip login (will be removed later) </button>
 
 </body>

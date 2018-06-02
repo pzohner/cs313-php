@@ -34,7 +34,7 @@ echo 'Attempting to connect to database';
         echo '<p>';
         echo $row['book'] . ' ' . $row['chapter'] . '  '.$row['verse'] . ' ' . $row['content'];
 
-
+        echo 'attempting to print out data';
         $topicStatement = $db->prepare('SELECT name from topic t INNER JOIN topiscripturelink tsl on st.topicid = t.id WHERE tsl.scriptureid = :scriptureid');
         $topicStatement->bindValue(':scriptureid', $row['id']);
         $topicStatement->execute();
