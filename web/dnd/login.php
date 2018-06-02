@@ -44,7 +44,7 @@
     
         // $stmt = $db->prepare('SELECT username, password FROM users');
 
-        foreach ($db->prepare('SELECT username, password FROM users') as $row)
+        foreach ($db->query('SELECT username, password FROM users') as $row)
         {
             if ($usernameInput == $row['username'] && $passwordInput == $row['password']) {
                 echo 'login successful';
