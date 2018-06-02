@@ -75,7 +75,7 @@ if(isset($_POST["submit"])) {
                 $stmt->bindValue(':avatarname', $avatarName);
                 $stmt->bindValue(':posx', 0);
                 $stmt->bindValue(':posy', 0);
-                $stmt->bindValue(':imgpath', $target_dir);
+                $stmt->bindValue(':imgpath', $target_file);
                 $stmt->bindValue(':userid', $row['id']);
                 if (!$stmt) {
                     echo "stmt not set";
