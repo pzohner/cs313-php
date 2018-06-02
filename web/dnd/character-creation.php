@@ -29,7 +29,6 @@
 
 
     <?php
-    if (isset($_POST['avatarname'])) {
 
     start_session();
 
@@ -68,7 +67,6 @@
         }
         // $setuserstmt = $db->query('SELECT username from users u INNER JOIN character c where c.userid = u.id');
 
-    }
         
 
 ?>
