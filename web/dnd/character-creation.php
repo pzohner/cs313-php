@@ -73,8 +73,10 @@ if ($uploadOk == 0) {
 } else {
     if (move_uploaded_file($_FILES["characterpic"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["characterpic"]["name"]). " has been uploaded.";
+        print_r($_FILES);
     } else {
         echo "Sorry, there was an error uploading your file.";
+        print_r($_FILES);
     }
 }
 
