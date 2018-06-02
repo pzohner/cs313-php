@@ -25,10 +25,13 @@
     </form>
 
 <?php
+    session_start();
+
 
     $usernameInput = $_POST['username'];
     $passwordInput = $_POST['password'];
 
+    
 
     $dbUrl = getenv('DATABASE_URL');
         
@@ -48,6 +51,8 @@
         {
             if ($usernameInput == $row['username'] && $passwordInput == $row['password']) {
                 echo 'login successful';
+                $_SESSION["currentUser"] = $usernameInput;
+
                 header("Location: selection-page.php");
             }
         }
