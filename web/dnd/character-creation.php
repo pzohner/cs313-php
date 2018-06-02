@@ -29,7 +29,7 @@
     <?php
 
     session_start();
-    
+
     $currentUser = $_SESSION["currentUser"];
     $avatarName = $_POST['avatarname'];
 
@@ -45,7 +45,7 @@
         echo 'Database connection successful';
 
         // make sure the user that we want this character to be associated with is in the database
-        foreach ($db->query('SELECT username, password FROM users where username = $currentUser') as $row) {
+        foreach ($db->query('SELECT username, password FROM users') as $row) {
             if ($row['username'] == $currentUser) {
                 echo 'Foudn the correct user';
                 $stmt = $db->prepare('INSERT INTO characters (avatarname, posx, posy, imgpath, userid)
