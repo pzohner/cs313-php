@@ -46,7 +46,6 @@ if(isset($_POST["submit"])) {
         echo "File is not an image.";
         $uploadOk = 0;
     }
-    echo "img was set properly";
 }
 
 
@@ -76,7 +75,7 @@ if(isset($_POST["submit"])) {
                 $stmt->bindValue(':avatarname', $avatarName);
                 $stmt->bindValue(':posx', 0);
                 $stmt->bindValue(':posy', 0);
-                $stmt->bindValue(':imgpath', "/examplepath");
+                $stmt->bindValue(':imgpath', $target_dir);
                 $stmt->bindValue(':userid', $row['id']);
                 if (!$stmt) {
                     echo "stmt not set";
