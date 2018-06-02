@@ -2,6 +2,7 @@
 <?php
     session_start();
 ?>
+
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -18,19 +19,38 @@
     
 </head>
 <body>
-
-    <form id='character-creation' action='character-creation.php' method='post'> 
+                                                                                <!-- specifies what type of data to use -->
+    <form id='character-creation' action='character-creation.php' method='post' enctype="multipart/form-data" > 
         <span> Choose a name and upload an image to create your character! </span> 
         Character name: <input type="text" name='avatarname'>
-        Upload an image: <input type="file">
+        Upload an image: <input type="file" name='characterpic'>
 
-    <button id="createCharacterComplete" type="submit" > Finish </button>
+    <button id="createCharacterComplete" type="submit" name="submit" > Finish </button>
     <!-- onclick="window.location.href='selection-page.php'" -->
     </form>
 
 
     <?php
+////////////////////////////
+$target_dir = "dnd/images/";
+$target_file = $target_dir . basename($_FILES["characterpic"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+    echo "img was set properly";
+}
 
+
+///////////////////////////
 
     $currentUser = $_SESSION["currentUser"];
     $avatarName = $_POST['avatarname'];
