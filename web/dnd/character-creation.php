@@ -28,8 +28,8 @@
 
     <?php
 
-    start_session();
-
+    session_start();
+    
     $currentUser = $_SESSION["currentUser"];
     $avatarName = $_POST['avatarname'];
 
