@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+?>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -28,7 +31,6 @@
 
     <?php
 
-    session_start();
 
     $currentUser = $_SESSION["currentUser"];
     $avatarName = $_POST['avatarname'];
@@ -47,8 +49,9 @@
         // make sure the user that we want this character to be associated with is in the database
         foreach ($db->query('SELECT username, password FROM users') as $row) {
             if ($row['username'] == $currentUser) {
-                echo 'Foudn the correct user';
-                $stmt = $db->prepare('INSERT INTO characters (avatarname, posx, posy, imgpath, userid)
+                echo 'Found the correct user';
+
+                $stmt = $db->prepare('INSERT INTO character (avatarname, posx, posy, imgpath, userid)
                 VALUES (:avatarname, :posx, :posy, :imgpath, :userid);');
                 $stmt->bindValue(':avatarname', $avatarName);
                 $stmt->bindValue(':posx', 0);
@@ -59,7 +62,7 @@
                     echo "stmt not set";
                 }
                 $stmt->execute();
-                echo 'insert character into database';
+                echo 'inserted character into database';
                 
             }
         }

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    session_start();
+?>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -25,7 +28,7 @@
     </form>
 
 <?php
-    session_start();
+    
 
 
     $usernameInput = $_POST['username'];
