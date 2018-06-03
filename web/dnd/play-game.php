@@ -32,8 +32,10 @@ try {
     }
 
 
-    foreach ($db->query('SELECT games.gamename, games.tableimgpath FROM games, dm where games.dmid = dm.id ') as $row)
-            {
+    // foreach ($db->query('SELECT games.gamename, games.tableimgpath FROM games, dm where games.dmid = dm.id ') as $row)
+    foreach ($db->query('SELECT gamename, tableimgpath FROM games') as $row)
+            
+        {
                 #print out all characters from the database
             echo '<body id="playGameBody" background="'. $row['tableimgpath'] . '">';
             echo '<h1>' . $row['gamename'] . '<h1/>';
