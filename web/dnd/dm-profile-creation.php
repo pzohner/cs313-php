@@ -27,7 +27,6 @@ session_start();
     <!-- onclick="window.location.href='selection-page.php'" -->
     </form>
 
-<!-- USEFUL WHEN TRYING TO CALL YOURSELF TO EXECUTE PHP
 <?php 
 
     $currentUser = $_SESSION["currentUser"];
@@ -35,7 +34,6 @@ session_start();
     $dmname = $_POST['dmname'];
 
     $dbUrl = getenv('DATABASE_URL');
-            
     $dboptions = parse_url($dbUrl);
 
     $user = $dboptions['user'];
@@ -45,7 +43,7 @@ session_start();
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo 'Database connection successful<br>';
 
-        foreach ($db->query('SELECT username, password FROM users') as $row) {
+        foreach ($db->query('SELECT username FROM users') as $row) {
             if ($row['username'] == $currentUser) {
                 echo 'Found the correct user<br>';
 
