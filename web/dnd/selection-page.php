@@ -26,11 +26,11 @@ function isDMSelected() {
 
     for(var i = 0; i < dmradio.length; i++) {
         if (dmradio[i].checked) {
-            dmradio[i].value;
+            
             document.getElementById("game-creation-btn").disabled = false;
 
         var data = {
-            dmname: "Porter"
+            dmname: dmradio[i].value;
         };
 
         $.post("set_dm_id.php", data);

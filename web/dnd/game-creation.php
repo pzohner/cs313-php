@@ -82,7 +82,8 @@ if ($uploadOk == 0) {
     $currentUser = $_SESSION["currentUser"];
     $tableimg = $_POST['tableimg'];
     $gamename = $_POST['gamename'];
-
+    $dmname = $_SESSION["dmname"];
+    echo "this is the dm name $dmname";
     $dbUrl = getenv('DATABASE_URL');
             
     $dboptions = parse_url($dbUrl);
