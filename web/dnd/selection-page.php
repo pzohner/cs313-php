@@ -26,8 +26,17 @@ function isDMSelected() {
 
     for(var i = 0; i < dmradio.length; i++) {
         if (dmradio[i].checked) {
+            dmradio[i].value;
             document.getElementById("game-creation-btn").disabled = false;
-        }
+
+        var data = {
+            dmname: "Porter"
+        };
+
+        $.post("set_dm_id.php", data);
+    }
+
+
     }
 }
 
@@ -88,7 +97,7 @@ function isCharacterSelected() {
                 echo '<input type="radio" name="player-selection" class="dmradio" onclick="isDMSelected()">' . $row['dmname'] . '<br/>';
                 
             }
-            echo ' <button id="dm-creation-btn" type="button" onclick="window.location.href=\'dm-profile-creation.php\'"> Create new DM Profile </button><br>';
+            echo ' <button id="dm-creation-btn" type="button" onclick="window.location.href=\'dm-profile-creation.php\' value='.$row['dmname'].'"> Create new DM Profile </button><br>';
             echo ' <button id="game-creation-btn" type="button" onclick="window.location.href=\'game-creation.php\'"> Create a new Game </button><br>';
             echo '</div>';
             echo '</div>';

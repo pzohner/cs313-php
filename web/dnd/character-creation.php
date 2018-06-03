@@ -99,7 +99,7 @@ if ($uploadOk == 0) {
 
         // make sure the user that we want this character to be associated with is in the database
         foreach ($db->query('SELECT id, username, password FROM users') as $row) {
-            if ($row['username'] == $currentUser) {
+            if ($row['username'] == $currentUser) { 
                 echo 'Found the correct user';
 
                 $stmt = $db->prepare('INSERT INTO character (avatarname, posx, posy, imgpath, userid)
