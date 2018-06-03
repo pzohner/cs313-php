@@ -29,7 +29,6 @@ session_start();
 
 <?php 
     $currentUser = $_SESSION["currentUser"];
-    
     $dmname = $_POST['dmname'];
 
     $dbUrl = getenv('DATABASE_URL');
