@@ -58,7 +58,7 @@ function isGameSelected() {
         var gamesradio1 = gamesradio[i].value;
 
         var data = {
-            gamesradio: gamesradio1
+            gamename: gamesradio1
         };
 
         $.post("play-game.php", data);
