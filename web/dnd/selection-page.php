@@ -97,10 +97,10 @@ function isCharacterSelected() {
             # GAME SELECTION
             echo '<div id="game-selection">';
             echo '<span> Choose a game to join...<br>';
-            foreach ($db->query('SELECT games.gamename, dm.dmname FROM games, dm where games.dmid = dm.id ') as $row)
+            foreach ($db->query('SELECT gamename, tableimgpath FROM games') as $row)
             {
                 #Games available
-                echo '<input type="radio" name="games-selection-btn" class="gamesradio" onclick="isCharacterSelected()" value="' . $row['gamename'] . '">' . $row['gamename'] . ' hosted by DM ' . $row['dmname']. '<br/>';
+                echo '<input type="radio" name="games-selection-btn" class="gamesradio" onclick="isCharacterSelected()">' . $row['gamename'] . '<br/>';
             }
             echo '<button id="enterGame" type="button" onclick="window.location.href=\'play-game.php\'"> Enter Game </button><br>';
 
