@@ -49,6 +49,24 @@ function isCharacterSelected() {
         }
     }
 }
+
+function isGameSelected() {
+    var gamesradio = document.getElementsByClassName("gamesradio");
+
+    for(var i = 0; i < gamesradio.length; i++) {
+        if (gamesradio[i].checked) {
+        var gamesradio1 = gamesradio[i].value;
+
+        var data = {
+            gamesradio: gamesradio1
+        };
+
+        $.post("play-game.php", data);
+    }
+
+
+    }
+}
 </script>
 </head>
 <body>
@@ -109,7 +127,7 @@ function isCharacterSelected() {
             foreach ($db->query('SELECT gamename, tableimgpath FROM games') as $row)
             {
                 #Games available
-                echo '<input type="radio" name="games-selection-btn" class="gamesradio" onclick="isCharacterSelected()">' . $row['gamename'] . '<br/>';
+                echo '<input type="radio" name="games-selection-btn" class="gamesradio" onclick="isGameSelected()" value='.$row['gamename'].'>' . $row['gamename'] . '<br/>';
             }
             echo '<button id="enterGame" type="button" onclick="window.location.href=\'play-game.php\'"> Enter Game </button><br>';
 

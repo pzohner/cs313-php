@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+session_start();
+$_SESSION['gamename'] = $_POST['gamesradio'];
+?>
+
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -16,6 +21,7 @@
 </head>
 
 <?php
+$gamename = $_SESSION['gamename'];
 try {
     $dbUrl = getenv('DATABASE_URL');
 
@@ -33,10 +39,9 @@ try {
 
 
     // foreach ($db->query('SELECT games.gamename, games.tableimgpath FROM games, dm where games.dmid = dm.id ') as $row)
-    foreach ($db->query('SELECT gamename, tableimgpath FROM games') as $row)
+    foreach ($db->query('SELECT gamename, tableimgpath FROM games where gamename = $gamename') as $row)
             
         {
-                #print out all characters from the database
             echo '<body id="playGameBody" background="'. $row['tableimgpath'] . '">';
             echo '<h1>' . $row['gamename'] . '<h1/>';
             }
