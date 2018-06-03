@@ -53,6 +53,7 @@ session_start();
                     echo "stmt not set";
                 }
                 $stmt->execute();
+                echo 'The row id: ' . $row['id'];
                 echo 'inserted dm profile into database<br>';
                 
             }
