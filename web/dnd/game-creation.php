@@ -108,7 +108,7 @@ if ($uploadOk == 0) {
                     echo "stmt not set";
                 }
                 $stmt->execute();
-                echo 'inserted character into database';
+                echo 'inserted game into database';
                 
             }
         }
