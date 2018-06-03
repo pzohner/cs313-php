@@ -23,12 +23,11 @@ session_start();
         <span> Enter a name to create your DM Profile. You must have a DM profile to create a game. </span> <br>
         DM name: <input type="text" name='dmname'>
 
-    <button id="dmProfileCreationComplete" type="submit" name='submit' > Finish </button>
+    <button id="dmProfileCreationComplete" type="\" name='submit' > Finish </button>
     <!-- onclick="window.location.href='selection-page.php'" -->
     </form>
 
 <?php 
-    echo 'php running<br>';
     $currentUser = $_SESSION["currentUser"];
     
     $dmname = $_POST['dmname'];
@@ -60,15 +59,6 @@ session_start();
             }
         }
 ?>
-<html>
-<head></head>
-<body>
-     <form method="post" action="">
-        <input type="submit" name="submit">
-     </form>
-</body>
-</html>
--->
 
 </body>
 </html>
