@@ -99,11 +99,10 @@ if ($uploadOk == 0) {
             if ($row['username'] == $currentUser) {
                 echo 'Found the correct user';
 
-                $stmt = $db->prepare('INSERT INTO character (gamename, dmid, tableimgpath)
-                VALUES (:gamename, :dmid, :tableimgpath);');
-                $stmt->bindValue(':gamename', $avatarName);
+                $stmt = $db->prepare('INSERT INTO games (gamename, tableimgpath)
+                VALUES (:gamename, :tableimgpath);');
+                $stmt->bindValue(':gamename', $gamename);
                 $stmt->bindValue(':tableimgpath', $target_file);
-                $stmt->bindValue(':userid', $row['id']);
                 if (!$stmt) {
                     echo "stmt not set";
                 }
