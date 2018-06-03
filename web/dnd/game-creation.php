@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -15,14 +18,104 @@
     
 </head>
 <body>
-    <div id='game-creation'> 
+    <form id='game-creation' action="game-creation.php" method='post' enctype="multipart/form-data"> 
         <span> Please select a game name, and an img to upload as the background. </span> 
-        Game name: <input type="text">
-        Upload an tabletop image: <input type="file">
+        Game name: <input type="text" name="gamename">
+        Upload an tabletop image: <input type="file" name='tableimg'>
 
-    <button id="gameCreationComplete" type="button" onclick="window.location.href='selection-page.php'"> Finish </button>
+    <button id="gameCreationComplete" type="submit" name="submit" > Finish </button>
+    <!-- onclick="window.location.href='selection-page.php'" -->
+    </form>
+    <?php
+////////////////////////////
+// Needed in order for php to accept file uploads!
+// ini_set('file_uploads', 'on');
+
+$target_dir = "images/";
+$target_file = $target_dir . basename($_FILES["tableimg"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+    $check = getimagesize($_FILES["tableimg"]["tmp_name"]);
+    if($check !== false) {
+        echo "File is an image - " . $check["mime"] . ".";
+        $uploadOk = 1;
+    } else {
+        echo "File is not an image.";
+        $uploadOk = 0;
+    }
+}
+// Check if file already exists
+if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+// Check file size
+if ($_FILES["tableimg"]["size"] > 500000) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+}
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $uploadOk = 0;
+}
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+    if (move_uploaded_file($_FILES["tableimg"]["tmp_name"], $target_file)) {
+        echo "The file ". basename( $_FILES["tableimg"]["name"]). " has been uploaded.";
+        print_r($_FILES);
+    } else {
+        echo "Sorry, there was an error uploading your file.";
+        print_r($_FILES);
+    }
+}
+
+
+///////////////////////////
+
+    $currentUser = $_SESSION["currentUser"];
+    $tableimg = $_POST['tableimg'];
+    $gamename = $_POST['gamename'];
+
+    $dbUrl = getenv('DATABASE_URL');
+            
+    $dboptions = parse_url($dbUrl);
+
+    $user = $dboptions['user'];
+    $password = $dboptions['pass'];
+
+        $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo 'Database connection successful';
+
+        // make sure the user that we want this character to be associated with is in the database
+        foreach ($db->query('SELECT id, username FROM users') as $row) {
+            if ($row['username'] == $currentUser) {
+                echo 'Found the correct user';
+
+                $stmt = $db->prepare('INSERT INTO character (gamename, dmid, tableimgpath)
+                VALUES (:gamename, :dmid, :tableimgpath);');
+                $stmt->bindValue(':gamename', $avatarName);
+                $stmt->bindValue(':tableimgpath', $target_file);
+                $stmt->bindValue(':userid', $row['id']);
+                if (!$stmt) {
+                    echo "stmt not set";
+                }
+                $stmt->execute();
+                echo 'inserted character into database';
+                
+            }
+        }
+        // $setuserstmt = $db->query('SELECT username from users u INNER JOIN character c where c.userid = u.id');
+
         
-    </div>
 
+?>
 </body>
 </html>
