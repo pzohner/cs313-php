@@ -38,7 +38,7 @@ try {
 
 
     // foreach ($db->query('SELECT games.gamename, games.tableimgpath FROM games, dm where games.dmid = dm.id ') as $row)
-    foreach ($db->query('SELECT gamename, tableimgpath FROM games where gamename = $gamename') as $row)
+    foreach ($db->query("SELECT gamename, tableimgpath FROM games where gamename = '$gamename'") as $row)
             
         {
             echo '<body id="playGameBody" background="'. $row['tableimgpath'] . '">';
