@@ -30,9 +30,8 @@ session_start();
 <!-- USEFUL WHEN TRYING TO CALL YOURSELF TO EXECUTE PHP
 <?php 
 
-$currentUser = $_SESSION["currentUser"];
+    $currentUser = $_SESSION["currentUser"];
     
-    if(isset($_POST['submit'])){ 
     $dmname = $_POST['dmname'];
 
     $dbUrl = getenv('DATABASE_URL');
@@ -62,9 +61,6 @@ $currentUser = $_SESSION["currentUser"];
                 
             }
         }
-    }else{
-         echo "submit button not set<br>";  
-    }
 ?>
 <html>
 <head></head>
