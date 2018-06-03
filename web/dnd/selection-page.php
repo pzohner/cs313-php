@@ -82,7 +82,7 @@ function isCharacterSelected() {
             echo '<div id="dm-selection">';
             echo '<span> Choose a Dungeon Masters Profile...<br>';
 
-            foreach ($db->query('SELECT dmname, FROM dm') as $row)
+            foreach ($db->query('SELECT dmname FROM dm') as $row)
             {
                 #Print out all DM profiles from the database
                 echo '<input type="radio" name="player-selection" class="dmradio" onclick="isDMSelected()">' . $row['dmname'] . '<br/>';
