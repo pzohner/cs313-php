@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
+
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -15,20 +19,51 @@
     
 </head>
 <body>
-    <div id='dm-profile-creation'> 
+    <form id='dm-profile-creation' action='dm-profile-creation.php' method='post'> 
         <span> Enter a name to create your DM Profile. You must have a DM profile to create a game. </span> <br>
-        DM name: <input type="text">
+        DM name: <input type="text" name='dmname'>
 
-    <button id="dmProfileCreationComplete" type="button" onclick="window.location.href='selection-page.php'"> Finish </button>
-        
-    </div>
+    <button id="dmProfileCreationComplete" type="submit" name='submit' > Finish </button>
+    <!-- onclick="window.location.href='selection-page.php'" -->
+    </form>
 
 <!-- USEFUL WHEN TRYING TO CALL YOURSELF TO EXECUTE PHP
-<#?php 
+<?php 
+
+$currentUser = $_SESSION["currentUser"];
+    
     if(isset($_POST['submit'])){ 
-         //code to be executed
+    $dmname = $_POST['dmname'];
+
+    $dbUrl = getenv('DATABASE_URL');
+            
+    $dboptions = parse_url($dbUrl);
+
+    $user = $dboptions['user'];
+    $password = $dboptions['pass'];
+
+        $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo 'Database connection successful<br>';
+
+        foreach ($db->query('SELECT username, password FROM users') as $row) {
+            if ($row['username'] == $currentUser) {
+                echo 'Found the correct user<br>';
+
+                $stmt = $db->prepare('INSERT INTO dm (dmname, userid)
+                VALUES (:dmname, :userid);');
+                $stmt->bindValue(':dmname', $dmname);
+                $stmt->bindValue(':userid', $row['id']);
+                if (!$stmt) {
+                    echo "stmt not set";
+                }
+                $stmt->execute();
+                echo 'inserted dm profile into database<br>';
+                
+            }
+        }
     }else{
-         //code to be executed  
+         echo "submit button not set<br>";  
     }
 ?>
 <html>
