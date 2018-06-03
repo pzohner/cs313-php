@@ -61,7 +61,7 @@ function isGameSelected() {
             gamename: gamesradio1
         };
 
-        $.post("play-game.php", data);
+        $.post("set_gamename.php", data);
     }
 
 

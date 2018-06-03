@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <?php
 session_start();
-$_SESSION['gamename'] = $_POST['gamename'];
-echo $_SESSION['gamename'];
 ?>
 
 <html>
@@ -23,7 +21,6 @@ echo $_SESSION['gamename'];
 
 <?php
 $gamename = $_SESSION['gamename'];
-echo "the gamename is $gamename";
 try {
     $dbUrl = getenv('DATABASE_URL');
 
