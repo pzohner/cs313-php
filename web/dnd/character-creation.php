@@ -30,7 +30,7 @@
     </form>
 
 
-    <?php
+<?php
 ////////////////////////////
 // Needed in order for php to accept file uploads!
 // ini_set('file_uploads', 'on');
@@ -98,7 +98,7 @@ if ($uploadOk == 0) {
         echo 'Database connection successful';
 
         // make sure the user that we want this character to be associated with is in the database
-        foreach ($db->query('SELECT username, password FROM users') as $row) {
+        foreach ($db->query('SELECT id, username, password FROM users') as $row) {
             if ($row['username'] == $currentUser) {
                 echo 'Found the correct user';
 
