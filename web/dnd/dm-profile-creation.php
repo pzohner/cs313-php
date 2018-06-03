@@ -28,7 +28,7 @@ session_start();
     </form>
 
 <?php 
-
+    echo 'php running<br>';
     $currentUser = $_SESSION["currentUser"];
     
     $dmname = $_POST['dmname'];
