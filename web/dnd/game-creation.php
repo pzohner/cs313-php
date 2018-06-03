@@ -84,6 +84,8 @@ if ($uploadOk == 0) {
     $gamename = $_POST['gamename'];
     $dmname = $_SESSION["dmname"];
     echo "this is the dm name $dmname";
+
+
     $dbUrl = getenv('DATABASE_URL');
             
     $dboptions = parse_url($dbUrl);
@@ -95,14 +97,20 @@ if ($uploadOk == 0) {
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo 'Database connection successful';
 
-        // make sure the user that we want this character to be associated with is in the database
-        foreach ($db->query('SELECT id, username FROM users') as $row) {
-            if ($row['username'] == $currentUser) {
-                echo 'Found the correct user';
 
-                $stmt = $db->prepare('INSERT INTO games (gamename, tableimgpath)
-                VALUES (:gamename, :tableimgpath);');
+        foreach ($db->query('SELECT id, dmname, userid from dm') as $dmrow) {
+            if ($dmrow['dmname'] == $dmname) {
+                echo "found the correct dmname";
+         
+        // make sure the user that we want this character to be associated with is in the database
+        // foreach ($db->query('SELECT id, username FROM users') as $row) {
+        //     if ($row['username'] == $currentUser) {
+        //         echo 'Found the correct user';
+
+                $stmt = $db->prepare('INSERT INTO games (gamename, tableimgpath, dmid)
+                VALUES (:gamename, :tableimgpath, :dmid);');
                 $stmt->bindValue(':gamename', $gamename);
+                $stmt->bindValue(':dmid', $dmrow['id']);
                 $stmt->bindValue(':tableimgpath', $target_file);
                 if (!$stmt) {
                     echo "stmt not set";
@@ -112,6 +120,8 @@ if ($uploadOk == 0) {
                 
             }
         }
+    
+        // }
         // $setuserstmt = $db->query('SELECT username from users u INNER JOIN character c where c.userid = u.id');
 
         
