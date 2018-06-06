@@ -63,10 +63,10 @@ try {
     gameboard.addEventListener("click", getClickPosition, false);
 
     function getClickPosition(e) {
-        alert(e.clientx);
-        alert(e.clienty);
-        var xPos = e.clientx;
-        var yPos = e.clienty;
+        alert(e.clientX);
+        alert(e.clientY);
+        var xPos = e.clientX;
+        var yPos = e.clientY;
 
         var translate3dValue = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 
