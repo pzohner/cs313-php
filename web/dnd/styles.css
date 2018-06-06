@@ -109,7 +109,7 @@ img {
 /*********************************************
 * PLAY GAME PAGE
 *********************************************/
-html, #gameboard {
+html, body #gameboard {
     display: block;
     background-repeat: no-repeat;
     background-attachment: fixed;
