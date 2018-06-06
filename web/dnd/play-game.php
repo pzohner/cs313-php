@@ -57,8 +57,6 @@ try {
     echo '</body>';
             
 ?>
-</body>
-
 <script>
     var gameboard = document.querySelector("#gameboard");
     var character = document.querySelector("#character");
@@ -67,6 +65,8 @@ try {
     gameboard.addEventListener("click", getClickPosition, false);
 
     function getClickPosition(e) {
+        alert(e.clientx);
+        alert(e.clienty);
         var xPos = e.clientx;
         var yPos = e.clienty;
 
@@ -75,4 +75,7 @@ try {
         character.style.transform = translate3dValue;
     }
 </script>
+</body>
+
+
 </html>
