@@ -65,8 +65,8 @@ try {
     function getClickPosition(e) {
         alert(e.clientX);
         alert(e.clientY);
-        var xPos = e.clientX;
-        var yPos = e.clientY;
+        var xPos = e.clientX - (character.offsetWidth / 2);
+        var yPos = e.clientY - (character.offsetHeight / 2);;
 
         var translate3dValue = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
 
