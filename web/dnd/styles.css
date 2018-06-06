@@ -120,5 +120,5 @@ html, body #gameboard {
 }
 
 #character {
-
+    position: relative;
 }
