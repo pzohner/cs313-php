@@ -18,6 +18,7 @@ session_start();
     <link href="styles.css" rel="stylesheet" type="text/css">
     
 </head>
+<body id="gameboard">
 
 <?php
 $gamename = $_SESSION['gamename'];
@@ -50,11 +51,28 @@ try {
     foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
             {
 
-                echo '<img src="' . $row['imgpath'] . '">';
+                echo '<img id="character" src="' . $row['imgpath'] . '">';
 
             }
     echo '</body>';
             
 ?>
+</body>
 
+<script>
+    var gameboard = document.querySelector("#gameboard");
+    var character = document.querySelector("#character");
+
+
+    gameboard.addEventListener("click", getClickPosition, false);
+
+    function getClickPosition(e) {
+        var xPos = e.clientx;
+        var yPos = e.clienty;
+
+        var translate3dValue = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+
+        character.style.transform = translate3dValue;
+    }
+</script>
 </html>
