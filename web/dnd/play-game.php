@@ -53,7 +53,6 @@ try {
                 echo '<img id="character" src="' . $row['imgpath'] . '">';
 
             }
-    echo '</body>';
             
 ?>
 <script>
