@@ -43,7 +43,7 @@ try {
             
         {
             echo '<body id="playGameBody" background="'. $row['tableimgpath'] . '">';
-            echo '<h1>' . $row['gamename'] . '<h1/>';
+            echo '<h1>' . $row['gamename'] . '</h1>';
             }
 
 
