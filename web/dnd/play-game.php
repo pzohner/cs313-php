@@ -18,7 +18,6 @@ session_start();
     <link href="styles.css" rel="stylesheet" type="text/css">
     
 </head>
-<body id="gameboard">
 
 <?php
 $gamename = $_SESSION['gamename'];
@@ -42,7 +41,7 @@ try {
     foreach ($db->query("SELECT gamename, tableimgpath FROM games where gamename = '$gamename'") as $row)
             
         {
-            echo '<body id="playGameBody" background="'. $row['tableimgpath'] . '">';
+            echo '<body id="gameboard" background="'. $row['tableimgpath'] . '">';
             echo '<h1>' . $row['gamename'] . '</h1>';
             }
 
