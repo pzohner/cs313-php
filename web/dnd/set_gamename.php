@@ -5,5 +5,4 @@ $_SESSION["gamename"] = $_POST['gamename'];
 
 echo $_SESSION["gamename"];
 
-
 ?>
