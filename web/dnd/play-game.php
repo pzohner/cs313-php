@@ -55,10 +55,10 @@ try {
     #print out each character onto the map
     foreach ($db->query('SELECT username, avatarname, imgpath FROM character, users') as $row)
             {
-                // if ($_SESSION["currentUser"] == $row['username']) {
+                if ($_SESSION["currentUser"] == $row['username']) {
                     echo '<img id=\"character' . $_SESSION['character'] . '\" src="' . $row['imgpath'] . '">';
 
-                // }
+                }
 
                 // echo '<img id="character" src="' . $row['imgpath'] . '">';
 
