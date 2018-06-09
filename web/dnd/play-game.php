@@ -56,7 +56,7 @@ try {
     foreach ($db->query('SELECT id, username from users') as $users) {
         if ($users['username'] == $_SESSION["currentUser"]) {
             $id = $users['id'];
-            foreach ($db->query("SELECT avatarname, imgpath, userid FROM character, users where userid = '$id'") as $row)
+            foreach ($db->query("SELECT avatarname, imgpath, userid FROM character where userid = '$id'") as $row)
                     {
                         
                         echo '<img id=\"character' . $_SESSION['character'] . '\" src="' . $row['imgpath'] . '">';
