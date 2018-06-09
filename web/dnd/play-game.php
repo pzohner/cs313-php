@@ -54,7 +54,7 @@ try {
     #print out each character onto the map
     $currentCharacter = $_SESSION['character'];
     
-    foreach ($db->query('SELECT username from users') as $users) {
+    // foreach ($db->query('SELECT username from users') as $users) {
         // if ($users['username'] == $_SESSION["currentUser"]) {
             // $id = $users['id'];
             foreach ($db->query("SELECT username, avatarname, imgpath, characterinuse FROM character, users where characterinuse = 'true' LIMIT 2") as $row)
@@ -64,7 +64,7 @@ try {
                         // echo '<img id="character" src="' . $row['imgpath'] . '">';
 
                     }
-                }
+                // }
             // }
             $javascriptcharacter = $nospaceName . $_SESSION["currentUser"];
             echo "<script> var character = '$javascriptcharacter' </script>"
