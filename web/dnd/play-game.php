@@ -60,6 +60,7 @@ try {
             foreach ($db->query("SELECT avatarname, imgpath, userid, characterinuse FROM character where characterinuse = 'true'") as $row)
                     {
                         $nospaceName=preg_replace('/\s+/', '', $row['avatarname']);
+                        $nospaceName = $nospaceName . $users['username'];
                         echo '<img id="character' . $nospaceName . '" src="' . $row['imgpath'] . '">';
                         // echo '<img id="character" src="' . $row['imgpath'] . '">';
 
