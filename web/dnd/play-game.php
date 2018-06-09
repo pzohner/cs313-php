@@ -53,15 +53,17 @@ try {
     }
 
     #print out each character onto the map
-    foreach ($db->query('SELECT username, avatarname, imgpath FROM character, users') as $row)
-            {
-                if ($_SESSION["currentUser"] == $row['username']) {
-                    echo '<img id=\"character' . $_SESSION['character'] . '\" src="' . $row['imgpath'] . '">';
+    foreach ($db->query('SELECT id, username from users') as $users) {
+        if ($users['username'] == $_SESSION["currentUser"]) {
+            $id = $users['id'];
+            foreach ($db->query("SELECT avatarname, imgpath, userid FROM character, users where userid = '$id'") as $row)
+                    {
+                        
+                        echo '<img id=\"character' . $_SESSION['character'] . '\" src="' . $row['imgpath'] . '">';
+                        // echo '<img id="character" src="' . $row['imgpath'] . '">';
 
+                    }
                 }
-
-                // echo '<img id="character" src="' . $row['imgpath'] . '">';
-
             }
             
 ?>
