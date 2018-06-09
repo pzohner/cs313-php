@@ -45,7 +45,15 @@ function isCharacterSelected() {
 
     for(var i = 0; i < characterradio.length; i++) {
         if (characterradio[i].checked) {
+            // if player selects a character, disable game-creation button (only available to DMs)
             document.getElementById("game-creation-btn").disabled = true;
+            var characterradio1 = characterradio[i].value;
+
+            var data = {
+                character: characterradio1
+            };
+
+            $.post("set_character.php", data);
         }
     }
 }
@@ -55,16 +63,14 @@ function isGameSelected() {
 
     for(var i = 0; i < gamesradio.length; i++) {
         if (gamesradio[i].checked) {
-        var gamesradio1 = gamesradio[i].value;
+            var gamesradio1 = gamesradio[i].value;
 
-        var data = {
-            gamename: gamesradio1
-        };
+            var data = {
+                gamename: gamesradio1
+            };
 
-        $.post("set_gamename.php", data);
-    }
-
-
+            $.post("set_gamename.php", data);
+        }
     }
 }
 </script>
@@ -95,10 +101,10 @@ function isGameSelected() {
             # PLAYER SELECTION
             echo '<div id="character-selection">';
             echo '<h5> Choose a character...<br>';
-            foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
+            foreach ($db->query('SELECT avatarname, imgpath FROM character c') as $row)
             {
                 #print out all characters from the database
-                echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected()"> ' . $row['avatarname'] . ' ' . '<img src="'. $row['imgpath'] .'">' . '<br/>';
+                echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected() value='.$row['avatarname'].'>' . $row['avatarname'] . ' ' . '<img src="'. $row['imgpath'] .'">' . '<br/>';
             }
             echo '<button id="createCharacterButton" type="button" onclick="window.location.href=\'character-creation.php\'"> Create a new Character </button><br>';
             echo '</div>';

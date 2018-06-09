@@ -70,7 +70,7 @@
             
     // echo "    </form>";
 ?>
-    <button type="button" onclick="window.location.href='selection-page.php'"> Skip login (will be removed later) </button>
+    <!-- <button type="button" onclick="window.location.href='selection-page.php'"> Skip login (will be removed later) </button> -->
 
 </body>
 </html>
