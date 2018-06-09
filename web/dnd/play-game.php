@@ -69,8 +69,9 @@ try {
             echo "<script> var character = '$javascriptcharacter' </script>"
 ?>
 <script>
+    var charactername = "#character" + character;
     var gameboard = document.querySelector("#gameboard");
-    var character = document.querySelector("#character" + character);
+    var character = document.querySelector(charactername);
 
 
     gameboard.addEventListener("click", getClickPosition, false);
