@@ -24,7 +24,7 @@ $dbUrl = getenv('DATABASE_URL');
 
 
 // update the database to reflect which character is in use
-$sql = "UPDATE character SET characterInUse = 'true' where avatarname = '$character'";
+$sql = "UPDATE character SET characterinuse = 'true' where avatarname = '$character'";
 
 // Prepare statement
 $stmt = $conn->prepare($sql);
