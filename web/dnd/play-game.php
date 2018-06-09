@@ -65,11 +65,12 @@ try {
                     }
                 }
             }
-            
+            $javascriptcharacter = $_SESSION['character'];
+            echo "<script> var character = '$javascriptcharacter' </script>"
 ?>
 <script>
     var gameboard = document.querySelector("#gameboard");
-    var character = document.querySelector("#character" + $_SESSION['character']);
+    var character = document.querySelector("#character )" + character;
 
 
     gameboard.addEventListener("click", getClickPosition, false);
