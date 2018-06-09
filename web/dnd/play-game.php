@@ -60,7 +60,7 @@ try {
             $id = $users['id'];
             foreach ($db->query("SELECT avatarname, imgpath, userid FROM character where userid = '$id' AND avatarname = '$currentCharacter'") as $row)
                     {
-                        echo '<img id=\"character' . $nospaceName . '\" src="' . $row['imgpath'] . '">';
+                        echo '<img id="character' . $nospaceName . '" src="' . $row['imgpath'] . '">';
                         // echo '<img id="character" src="' . $row['imgpath'] . '">';
 
                     }
