@@ -101,7 +101,7 @@ function isGameSelected() {
             # PLAYER SELECTION
             echo '<div id="character-selection">';
             echo '<h5> Choose a character...<br>';
-            foreach ($db->query('SELECT avatarname, imgpath FROM character c') as $row)
+            foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
             {
                 #print out all characters from the database
                 echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected() value='.$row['avatarname'].'>' . $row['avatarname'] . ' ' . '<img src="'. $row['imgpath'] .'">' . '<br/>';
