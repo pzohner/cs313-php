@@ -60,14 +60,13 @@ try {
             foreach ($db->query("SELECT username, avatarname, imgpath, characterinuse FROM character, users where characterinuse = 'true' LIMIT 2") as $row)
                     {
                         $nospaceName=preg_replace('/\s+/', '', $row['avatarname']);
-                        $nospaceName = $nospaceName . $users['username'];
-                        echo '<img id="character' . $nospaceName . '" src="' . $row['imgpath'] . '">';
+                        echo '<img id="character' . $nospaceName . $users['username'] . '" src="' . $row['imgpath'] . '">';
                         // echo '<img id="character" src="' . $row['imgpath'] . '">';
 
                     }
                 }
             // }
-            $javascriptcharacter = $nospaceName;
+            $javascriptcharacter = $nospaceName . $_SESSION["currentUser"];
             echo "<script> var character = '$javascriptcharacter' </script>"
 ?>
 <script>
