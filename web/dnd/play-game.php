@@ -70,7 +70,7 @@ try {
 ?>
 <script>
     var gameboard = document.querySelector("#gameboard");
-    var character = document.querySelector("#character )" + character;
+    var character = document.querySelector("#character" + character);
 
 
     gameboard.addEventListener("click", getClickPosition, false);
