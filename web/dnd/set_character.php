@@ -5,15 +5,20 @@ $character = $_POST['character'];
 // $characterArray = [];
 $dbUrl = getenv('DATABASE_URL');
             
+try {
+    $dbUrl = getenv('DATABASE_URL');
+
     $dboptions = parse_url($dbUrl);
 
     $user = $dboptions['user'];
     $password = $dboptions['pass'];
 
         $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo 'Database connection successful';
-
+    } catch (PDOEXCEPTION $ex)
+    {
+        echo 'Error!: ' . $ex->getMessage();
+        die();
+    }
 
 
         
@@ -27,7 +32,7 @@ $dbUrl = getenv('DATABASE_URL');
 $sql = "UPDATE character SET characterinuse = 'true' where avatarname = '$character'";
 
 // Prepare statement
-$stmt = $conn->prepare($sql);
+$stmt = $db->prepare($sql);
 
 // execute the query
 $stmt->execute();
