@@ -45,6 +45,12 @@ try {
             echo '<h1>' . $row['gamename'] . '</h1>';
             }
 
+    foreach ($db->query('SELECT username from users') as $users) {
+        if ($users['username'] == $_SESSION["currentUser"]) {
+            echo '<span>'. $users['username'] . '</span>';
+
+        }
+    }
 
     #print out each character onto the map
     foreach ($db->query('SELECT avatarname, imgpath FROM character') as $row)
