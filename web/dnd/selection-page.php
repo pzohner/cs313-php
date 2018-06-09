@@ -108,7 +108,7 @@ function isGameSelected() {
             foreach ($db->query('SELECT id, username from users') as $users) {
                 if ($users['username'] == $_SESSION["currentUser"]) {
                     $id = $users['id'];
-                    foreach ($db->query("SELECT userid, avatarname, imgpath FROM character, users where character.userid = users.$id") as $row)
+                    foreach ($db->query("SELECT userid, avatarname, imgpath FROM character, users where character.userid = '$id'") as $row)
                         {
                             #print out all characters from the database
                             echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected()" value="'.$row['avatarname'].'">' . $row['avatarname'] . ' ' . '<img src="'. $row['imgpath'] .'">' . '<br/>';
