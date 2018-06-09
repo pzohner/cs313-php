@@ -104,11 +104,18 @@ function isGameSelected() {
             # PLAYER SELECTION
             echo '<div id="character-selection">';
             echo '<h5> Choose a character...<br>';
-            foreach ($db->query('SELECT userid, avatarname, imgpath FROM character, users where character.userid = users.id') as $row)
-            {
-                #print out all characters from the database
-                echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected()" value="'.$row['avatarname'].'">' . $row['avatarname'] . ' ' . '<img src="'. $row['imgpath'] .'">' . '<br/>';
+
+            foreach ($db->query('SELECT id, username from users') as $users) {
+                if ($users['username'] == $_SESSION["currentUser"]) {
+                    $id = $users['id'];
+                    foreach ($db->query("SELECT id, userid, avatarname, imgpath FROM character, users where character.userid = '$id'") as $row)
+                        {
+                            #print out all characters from the database
+                            echo '<input type="radio" name="player-selection" class="characterradio" onclick="isCharacterSelected()" value="'.$row['avatarname'].'">' . $row['avatarname'] . ' ' . '<img src="'. $row['imgpath'] .'">' . '<br/>';
+                        }
+                }
             }
+            
             echo '<button id="createCharacterButton" type="button" onclick="window.location.href=\'character-creation.php\'"> Create a new Character </button><br>';
             echo '</div>';
 
