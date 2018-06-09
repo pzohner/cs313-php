@@ -63,8 +63,6 @@ try {
     gameboard.addEventListener("click", getClickPosition, false);
 
     function getClickPosition(e) {
-        alert(e.clientX);
-        alert(e.clientY);
         var xPos = e.clientX - (character.offsetWidth / 2);
         var yPos = e.clientY - (character.offsetHeight / 2);;
 
