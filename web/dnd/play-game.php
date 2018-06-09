@@ -54,19 +54,19 @@ try {
     #print out each character onto the map
     $currentCharacter = $_SESSION['character'];
     
-    foreach ($db->query('SELECT id, username from users') as $users) {
-        if ($users['username'] == $_SESSION["currentUser"]) {
-            $id = $users['id'];
-            foreach ($db->query("SELECT avatarname, imgpath, userid, characterinuse FROM character where characterinuse = 'true'") as $row)
+    foreach ($db->query('SELECT username from users') as $users) {
+        // if ($users['username'] == $_SESSION["currentUser"]) {
+            // $id = $users['id'];
+            foreach ($db->query("SELECT username, avatarname, imgpath, characterinuse FROM character, users where characterinuse = 'true' LIMIT 2") as $row)
                     {
                         $nospaceName=preg_replace('/\s+/', '', $row['avatarname']);
-                        $nospaceName = $nospaceName . $_SESSION["currentUser"];
+                        $nospaceName = $nospaceName . $users['username'];
                         echo '<img id="character' . $nospaceName . '" src="' . $row['imgpath'] . '">';
                         // echo '<img id="character" src="' . $row['imgpath'] . '">';
 
                     }
                 }
-            }
+            // }
             $javascriptcharacter = $nospaceName;
             echo "<script> var character = '$javascriptcharacter' </script>"
 ?>
