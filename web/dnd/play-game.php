@@ -53,19 +53,20 @@ try {
     }
 
     #print out each character onto the map
+    $nospaceName=preg_replace('/\s+/', '', $$_SESSION['character']);
     foreach ($db->query('SELECT id, username from users') as $users) {
         if ($users['username'] == $_SESSION["currentUser"]) {
             $id = $users['id'];
             foreach ($db->query("SELECT avatarname, imgpath, userid FROM character where userid = '$id'") as $row)
                     {
-                        
-                        echo '<img id=\"character' . $_SESSION['character'] . '\" src="' . $row['imgpath'] . '">';
+                        $nospaceName=preg_replace('/\s+/', '', $$_SESSION['character']);
+                        echo '<img id=\"character' . $nospaceName . '\" src="' . $row['imgpath'] . '">';
                         // echo '<img id="character" src="' . $row['imgpath'] . '">';
 
                     }
                 }
             }
-            $javascriptcharacter = $_SESSION['character'];
+            $javascriptcharacter = $nospaceName;
             echo "<script> var character = '$javascriptcharacter' </script>"
 ?>
 <script>
