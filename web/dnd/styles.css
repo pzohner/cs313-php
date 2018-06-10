@@ -37,6 +37,10 @@ border-radius: 25px;
 opacity: 0.5;
 }
 
+#game-selection:hover {
+    opacity: 1;
+}
+
 #playerordm {
     display:flex;
     flex-direction: row;
@@ -56,6 +60,10 @@ opacity: 0.5;
     opacity: 0.5;
 }
 
+#dm-selection:hover {
+    opacity: 1;
+}
+
 /* Div for selecting character profiles */
 #character-selection {
     display:flex;
@@ -66,6 +74,10 @@ opacity: 0.5;
     border-radius: 25px;
     width: 50%;
     opacity: 0.5;
+}
+
+#character-selection:hover {
+    opacity: 1;
 }
 
 #createCharacterButton {
