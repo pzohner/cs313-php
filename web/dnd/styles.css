@@ -151,3 +151,8 @@ html, #gameboard, main {
 #character {
     position: relative;
 }
+
+
+.tiletitles {
+    font-family: 'MedievalSharp', cursive;
+}
