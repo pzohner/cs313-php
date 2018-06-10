@@ -85,6 +85,13 @@ try {
         var yPos = e.clientY - (character.offsetHeight / 2);;
 
         var translate3dValue = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+        
+        var data = {
+                x: xPos,
+                y: yPos
+            };
+
+            $.post("updatecoordinates.php", data);
 
         character.style.transform = translate3dValue;
     }
