@@ -103,7 +103,7 @@ function isGameSelected() {
         
             # PLAYER SELECTION
             echo '<div id="character-selection">';
-            echo '<h5 class='tiletitles'> Choose a character...<br>';
+            echo "<h5 class='tiletitles'> Choose a character...<br>";
 
             foreach ($db->query('SELECT id, username from users') as $users) {
                 if ($users['username'] == $_SESSION["currentUser"]) {
@@ -123,7 +123,7 @@ function isGameSelected() {
 
             # DM SELECTION
             echo '<div id="dm-selection">';
-            echo '<span class='tiletitles'> Choose a Dungeon Masters Profile...<br>';
+            echo "<span class='tiletitles'> Choose a Dungeon Masters Profile...<br>";
 
             foreach ($db->query('SELECT dmname FROM dm') as $row)
             {
@@ -139,7 +139,7 @@ function isGameSelected() {
 
             # GAME SELECTION
             echo '<div id="game-selection">';
-            echo '<span class='tiletitles'> Choose a game to join...<br>';
+            echo "<span class='tiletitles'> Choose a game to join...<br>";
             foreach ($db->query('SELECT gamename, tableimgpath FROM games') as $row)
             {
                 #Games available
