@@ -33,6 +33,7 @@
 padding: 25px;
 border-style:ridge;
 border-color: green;
+border-radius: 25px;
 }
 
 #playerordm {
@@ -49,6 +50,7 @@ border-color: green;
     padding: 10px;
     border-style: ridge;
     border-color: orange;
+    border-radius: 25px;
 }
 
 /* Div for selecting character profiles */
@@ -58,6 +60,7 @@ border-color: green;
     padding: 10px;
     border-style: ridge;
     border-color: blue;
+    border-radius: 25px;
 }
 
 #createCharacterButton {
