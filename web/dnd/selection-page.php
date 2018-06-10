@@ -6,7 +6,7 @@ session_start();
 <head>
 	<meta charset="UTF-8">
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp" rel="stylesheet"> 
 	<!-- <script src="intro/scripts.js"></script> -->
 
 	<!-- Including bootstrap -->
@@ -103,7 +103,7 @@ function isGameSelected() {
         
             # PLAYER SELECTION
             echo '<div id="character-selection">';
-            echo '<h5> Choose a character...<br>';
+            echo "<h5 style='font-family: 'MedievalSharp', cursive;'> Choose a character...<br>";
 
             foreach ($db->query('SELECT id, username from users') as $users) {
                 if ($users['username'] == $_SESSION["currentUser"]) {
@@ -123,7 +123,7 @@ function isGameSelected() {
 
             # DM SELECTION
             echo '<div id="dm-selection">';
-            echo '<span> Choose a Dungeon Masters Profile...<br>';
+            echo "<span style='font-family: 'MedievalSharp', cursive;'> Choose a Dungeon Masters Profile...<br>";
 
             foreach ($db->query('SELECT dmname FROM dm') as $row)
             {
@@ -139,7 +139,7 @@ function isGameSelected() {
 
             # GAME SELECTION
             echo '<div id="game-selection">';
-            echo '<span> Choose a game to join...<br>';
+            echo "<span> style='font-family: 'MedievalSharp', cursive;'> Choose a game to join...<br>";
             foreach ($db->query('SELECT gamename, tableimgpath FROM games') as $row)
             {
                 #Games available
