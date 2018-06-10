@@ -38,16 +38,4 @@ try {
         $stmt->execute();
 
 
-    $stmt = $db->prepare('INSERT INTO character (posx, posy, imgpath, userid)
-                VALUES (:avatarname, :posx, :posy, :imgpath, :userid);');
-                $stmt->bindValue(':avatarname', $avatarName);
-                $stmt->bindValue(':posx', 0);
-                $stmt->bindValue(':posy', 0);
-                $stmt->bindValue(':imgpath', $target_file);
-                $stmt->bindValue(':userid', $row['id']);
-                if (!$stmt) {
-                    echo "stmt not set";
-                }
-                $stmt->execute();
-
 ?>

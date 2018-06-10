@@ -59,10 +59,10 @@ try {
         // if ($users['username'] == $_SESSION["currentUser"]) {
             $username = $users['username'];
             $id = $users['id'];
-            foreach ($db->query("SELECT username, avatarname, imgpath, characterinuse, userid FROM character, users where characterinuse = 'true' AND userid = '$id' AND username = '$username'") as $row)
+            foreach ($db->query("SELECT username, avatarname, imgpath, characterinuse, userid, posx, posy FROM character, users where characterinuse = 'true' AND userid = '$id' AND username = '$username'") as $row)
                     {
                         // $nospaceName=preg_replace('/\s+/', '', $row['avatarname']);
-                        echo '<img id="character' . $users['username'] . '" src="' . $row['imgpath'] . '">';
+                        echo '<img id="character' . $users['username'] . '" src="' . $row['imgpath'] . '" style="transform: translate3d(' . $row['posx'] . 'px,' . $row['posx'] . 'px, 0px)">';
                         // echo '<img id="character" src="' . $row['imgpath'] . '">';
 
                     }
