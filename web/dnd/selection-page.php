@@ -139,7 +139,7 @@ function isGameSelected() {
 
             # GAME SELECTION
             echo '<div id="game-selection">';
-            echo "<span> style=\'font-family: \'MedievalSharp\', cursive;\'> Choose a game to join...<br>";
+            echo "<span> style='font-family: \"MedievalSharp\", cursive;'> Choose a game to join...<br>";
             foreach ($db->query('SELECT gamename, tableimgpath FROM games') as $row)
             {
                 #Games available
