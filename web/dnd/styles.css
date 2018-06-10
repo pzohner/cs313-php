@@ -35,10 +35,12 @@ border-style:ridge;
 border-color: green;
 border-radius: 25px;
 opacity: 0.5;
+transition-duration: 5s;
 }
 
 #game-selection:hover {
     opacity: 1;
+    transition-duration: 5s;
 }
 
 #playerordm {
@@ -58,10 +60,12 @@ opacity: 0.5;
     border-radius: 25px;
     width: 50%;
     opacity: 0.5;
+    transition-duration: 5s;
 }
 
 #dm-selection:hover {
     opacity: 1;
+    transition-duration: 5s;
 }
 
 /* Div for selecting character profiles */
@@ -74,10 +78,12 @@ opacity: 0.5;
     border-radius: 25px;
     width: 50%;
     opacity: 0.5;
+    transition-duration: 5s;
 }
 
 #character-selection:hover {
     opacity: 1;
+    transition-duration: 5s;
 }
 
 #createCharacterButton {
