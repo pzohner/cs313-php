@@ -80,7 +80,7 @@ function isGameSelected() {
 </head>
 <body>
     <div id='selection'> 
-        <h1> Select the DM or character you wish to use to play or create a new one! </h1> 
+        <h2> Select the DM or character you wish to use to play or create a new one! </h2> 
         
         <?php
             try {

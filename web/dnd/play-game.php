@@ -51,6 +51,7 @@ try {
         }
     }
 
+    
     #print out each character onto the map
     $currentCharacter = $_SESSION['character'];
     
