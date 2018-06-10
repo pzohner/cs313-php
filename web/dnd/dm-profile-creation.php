@@ -55,7 +55,7 @@ session_start();
                 $stmt->execute();
                 echo 'The row id: ' . $row['id'];
                 echo 'inserted dm profile into database<br>';
-                
+                header("Location: selection-page.php");
             }
         }
 ?>

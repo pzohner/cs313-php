@@ -114,7 +114,7 @@ if ($uploadOk == 0) {
                 }
                 $stmt->execute();
                 echo 'inserted character into database';
-                
+                header("Location: selection-page.php");
             }
         }
         // $setuserstmt = $db->query('SELECT username from users u INNER JOIN character c where c.userid = u.id');
