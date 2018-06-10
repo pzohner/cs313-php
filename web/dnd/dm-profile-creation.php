@@ -39,11 +39,11 @@ session_start();
 
         $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo 'Database connection successful<br>';
+        // echo 'Database connection successful<br>';
 
         foreach ($db->query('SELECT id, username FROM users') as $row) {
             if ($row['username'] == $currentUser) {
-                echo 'Found the correct user<br>';
+                // echo 'Found the correct user<br>';
 
                 $stmt = $db->prepare('INSERT INTO dm (dmname, userid)
                 VALUES (:dmname, :userid);');
@@ -53,8 +53,8 @@ session_start();
                     echo "stmt not set";
                 }
                 $stmt->execute();
-                echo 'The row id: ' . $row['id'];
-                echo 'inserted dm profile into database<br>';
+                // echo 'The row id: ' . $row['id'];
+                // echo 'inserted dm profile into database<br>';
                 if (isset($_POST['submit'])) {
                     header("Location: selection-page.php");
 

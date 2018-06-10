@@ -95,12 +95,12 @@ if ($uploadOk == 0) {
 
         $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo 'Database connection successful';
+        // echo 'Database connection successful';
 
         // make sure the user that we want this character to be associated with is in the database
         foreach ($db->query('SELECT id, username FROM users') as $row) {
             if ($row['username'] == $currentUser) { 
-                echo 'Found the correct user';
+                // echo 'Found the correct user';
 
                 $stmt = $db->prepare('INSERT INTO character (avatarname, posx, posy, imgpath, userid)
                 VALUES (:avatarname, :posx, :posy, :imgpath, :userid);');
@@ -113,7 +113,7 @@ if ($uploadOk == 0) {
                     echo "stmt not set";
                 }
                 $stmt->execute();
-                echo 'inserted character into database';
+                // echo 'inserted character into database';
                 header("Location: selection-page.php");
             }
         }

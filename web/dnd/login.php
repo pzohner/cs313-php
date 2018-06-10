@@ -45,7 +45,7 @@
 
         $db = new PDO('pgsql:host=ec2-54-235-109-37.compute-1.amazonaws.com;port=5432;dbname=de9dr91rnaase1', $user, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo 'Database connection successful';
+        // echo 'Database connection successful';
         
     
         // $stmt = $db->prepare('SELECT username, password FROM users');
