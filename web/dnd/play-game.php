@@ -56,8 +56,9 @@ try {
     
     foreach ($db->query('SELECT id, username from users') as $users) {
         // if ($users['username'] == $_SESSION["currentUser"]) {
+            $username = $users['username'];
             $id = $users['id'];
-            foreach ($db->query("SELECT avatarname, imgpath, characterinuse FROM character where characterinuse = 'true' AND userid = '$id' AND avatarname = '$currentCharacter'") as $row)
+            foreach ($db->query("SELECT avatarname, imgpath, characterinuse FROM character where characterinuse = 'true' AND userid = '$id' AND username = '$username' ") as $row)
                     {
                         $nospaceName=preg_replace('/\s+/', '', $row['avatarname']);
                         echo '<img id="character' . $nospaceName . $users['username'] . '" src="' . $row['imgpath'] . '">';
