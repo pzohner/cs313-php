@@ -54,7 +54,7 @@ try {
     #print out each character onto the map
     $currentCharacter = $_SESSION['character'];
     
-    foreach ($db->query('SELECT username from users') as $users) {
+    foreach ($db->query('SELECT id, username from users') as $users) {
         // if ($users['username'] == $_SESSION["currentUser"]) {
             $id = $users['id'];
             foreach ($db->query("SELECT avatarname, imgpath, characterinuse FROM character where characterinuse = 'true' AND userid = '$id'") as $row)
